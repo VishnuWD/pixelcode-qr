@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PixelCode QR — High-Converting Vector QR Generator</title>
+  <meta name="description" content="Generate sharp, high-converting QR codes with designer frames, UPI payment standees, WhatsApp badges, and barebone vector codes." />
+
+  <!-- Fonts: Sora (Headings) & Inter (UI) from pixelcode.in -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="pixelcode-logo.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Bundled Local Libraries -->
+  <script src="vendor/qr-code-styling.js"></script>
+  <script src="vendor/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar (Glass effect from pixelcode.in) -->
+  <header class="app-header">
+    <div class="header-glass">
+      <a href="https://pixelcode.in" target="_blank" class="brand-wrapper">
+        <img src="pixelcode-logo.png" alt="PixelCode Logo" class="brand-logo-img" />
+        <div>
+          <div class="brand-name">
+            PixelCode <span class="brand-badge">QR</span>
+          </div>
+          <div class="brand-tagline">Not just pretty. Persuasive.</div>
+        </div>
+      </a>
+
+      <!-- Mode Switcher: Basic vs Advanced -->
+      <div class="mode-switch-pill">
+        <button id="modeBasicBtn" class="mode-tab-btn active" onclick="switchMode('basic')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span>Basic Mode</span>
+        </button>
+        <button id="modeAdvancedBtn" class="mode-tab-btn" onclick="switchMode('advanced')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span>Advanced Mode</span>
+        </button>
+      </div>
+
+      <div class="header-right">
+        <a href="https://pixelcode.in" target="_blank" class="btn-pixelcode-link">
+          <span>PixelCode.in</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Live Marquee Strip from pixelcode.in -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span><span class="marquee-dot"></span> WEBSITES THAT CONVERT</span>
+      <span><span class="marquee-dot"></span> BRANDING THAT LOOKS EXPENSIVE</span>
+      <span><span class="marquee-dot"></span> COMMERCIAL VECTOR QR</span>
+      <span><span class="marquee-dot"></span> ULTRA-HD PNG & SVG EXPORT</span>
+      <span><span class="marquee-dot"></span> UPI STANDS & WHATSAPP CARDS</span>
+      <span><span class="marquee-dot"></span> NOT JUST PRETTY. PERSUASIVE.</span>
+      <span><span class="marquee-dot"></span> WEBSITES THAT CONVERT</span>
+      <span><span class="marquee-dot"></span> BRANDING THAT LOOKS EXPENSIVE</span>
+      <span><span class="marquee-dot"></span> COMMERCIAL VECTOR QR</span>
+      <span><span class="marquee-dot"></span> ULTRA-HD PNG & SVG EXPORT</span>
+      <span><span class="marquee-dot"></span> UPI STANDS & WHATSAPP CARDS</span>
+      <span><span class="marquee-dot"></span> NOT JUST PRETTY. PERSUASIVE.</span>
+    </div>
+  </div>
+
+  <!-- Hero Intro Section (Direct PixelCode Aesthetics) -->
+  <section class="hero-container">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+
+    <div class="hero-badge-pill">
+      <span class="hero-pulse-lime"></span>
+      <span>PixelCode Vector Engine • Free & Commercial Ready</span>
+    </div>
+
+    <h1 class="hero-h1">
+      Create custom QR codes that <span class="text-gradient">look expensive.</span>
+    </h1>
+    <p class="hero-p">
+      Generate clean barebone vector codes or designer stands for payments, menus, Wi-Fi, and contacts.
+    </p>
+  </section>
+
+  <!-- Main Workspace Grid -->
+  <main class="workspace-grid">
+
+    <!-- LEFT COLUMN: CONTROLS & SETTINGS -->
+    <div class="controls-column">
+
+      <!-- MERGED STUDIO CARD: 1. CONTENT + 2. TEMPLATE SELECTION -->
+      <div class="studio-card">
+
+        <!-- Section 1: Content Type & Inputs -->
+        <div>
+          <div class="section-title-box">
+            <div class="section-title">
+              <span class="step-circle">1</span>
+              <span>Enter Your Content</span>
+            </div>
+            <span class="section-hint">Choose destination type</span>
+          </div>
+
+          <!-- Content Type Tabs -->
+          <div class="content-type-nav">
+            <button class="type-btn active" data-type="url" onclick="selectType('url')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              <span>Website URL</span>
+            </button>
+            <button class="type-btn" data-type="whatsapp" onclick="selectType('whatsapp')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <span>WhatsApp</span>
+            </button>
+            <button class="type-btn" data-type="upi" onclick="selectType('upi')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <span>UPI Pay</span>
+            </button>
+            <button class="type-btn" data-type="wifi" onclick="selectType('wifi')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>
+              <span>Wi-Fi Access</span>
+            </button>
+            <button class="type-btn" data-type="vcard" onclick="selectType('vcard')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>
+              <span>Contact Card</span>
+            </button>
+            <button class="type-btn" data-type="text" onclick="selectType('text')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="9"/><line x1="4" x2="20" y1="15"/><line x1="10" x2="8" y1="3"/><line x1="16" x2="14" y1="21"/></svg>
+              <span>Plain Text</span>
+            </button>
+          </div>
+
+          <!-- Dynamic Form Panels -->
+          <div id="formsWrapper">
+
+            <!-- URL Form -->
+            <div class="form-panel active" id="form-url">
+              <div class="form-group">
+                <label class="form-label">Destination Website URL</label>
+                <input type="url" id="inputUrl" class="form-input" placeholder="https://pixelcode.in" value="https://pixelcode.in" />
+              </div>
+            </div>
+
+            <!-- WhatsApp Form -->
+            <div class="form-panel" id="form-whatsapp">
+              <div class="form-group">
+                <label class="form-label">Phone Number (with country code)</label>
+                <input type="tel" id="waPhone" class="form-input" placeholder="919959607605" value="919959607605" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Pre-filled Chat Message</label>
+                <input type="text" id="waMessage" class="form-input" value="Hi PixelCode, I want to discuss a project!" />
+              </div>
+            </div>
+
+            <!-- UPI Form -->
+            <div class="form-panel" id="form-upi">
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label">UPI VPA / ID</label>
+                  <input type="text" id="upiId" class="form-input" placeholder="username@okhdfcbank" value="pixelcode@upi" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Payee Business Name</label>
+                  <input type="text" id="upiName" class="form-input" placeholder="Store or Brand Name" value="PixelCode Creative" />
+                </div>
+              </div>
+              <div class="form-grid-2" style="margin-top: 0.75rem;">
+                <div class="form-group">
+                  <label class="form-label">Fixed Amount (Optional ₹)</label>
+                  <input type="number" id="upiAmount" class="form-input" placeholder="Leave empty for open amount" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Payment Note</label>
+                  <input type="text" id="upiNote" class="form-input" value="PixelCode Services" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Wi-Fi Form -->
+            <div class="form-panel" id="form-wifi">
+              <div class="form-group">
+                <label class="form-label">Network Name (SSID)</label>
+                <input type="text" id="wifiSsid" class="form-input" placeholder="e.g. PixelCode_Guest" value="PixelCode_Guest" />
+              </div>
+              <div class="form-grid-2" style="margin-top: 0.75rem;">
+                <div class="form-group">
+                  <label class="form-label">Wi-Fi Password</label>
+                  <input type="text" id="wifiPass" class="form-input" placeholder="Network password" value="CreateSharp2026" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Security Type</label>
+                  <select id="wifiType" class="form-select">
+                    <option value="WPA" selected>WPA / WPA2 (Standard)</option>
+                    <option value="nopass">Open Network (No Password)</option>
+                    <option value="WEP">WEP (Legacy)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- vCard Form -->
+            <div class="form-panel" id="form-vcard">
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" id="vcardName" class="form-input" value="Vishnu | PixelCode" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Role / Job Title</label>
+                  <input type="text" id="vcardTitle" class="form-input" value="Creative Director" />
+                </div>
+              </div>
+              <div class="form-grid-2" style="margin-top: 0.75rem;">
+                <div class="form-group">
+                  <label class="form-label">Phone Number</label>
+                  <input type="tel" id="vcardPhone" class="form-input" value="+919959607605" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Email Address</label>
+                  <input type="email" id="vcardEmail" class="form-input" value="info@pixelcode.in" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Plain Text Form -->
+            <div class="form-panel" id="form-text">
+              <div class="form-group">
+                <label class="form-label">Plain Text Content</label>
+                <textarea id="plainText" class="form-textarea" placeholder="Type or paste any text...">PixelCode — Not just pretty. Persuasive.
+Website: https://pixelcode.in
+WhatsApp: +919959607605</textarea>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Clean Divider between Content & Templates -->
+        <div class="card-divider"></div>
+
+        <!-- Section 2: Designer Layout & Barebone Selector -->
+        <div>
+          <div class="section-title-box">
+            <div class="section-title">
+              <span class="step-circle">2</span>
+              <span>Choose Layout & Frame</span>
+            </div>
+            <span class="section-hint">Raw barebone or styled frame</span>
+          </div>
+
+          <!-- Templates Grid (Barebone is prominent first tile) -->
+          <div class="templates-grid" id="templatesGrid">
+            <!-- Injected by app.js -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- STEP 3: BRAND COLOR PALETTE -->
+      <div class="studio-card" style="padding: 1.5rem 1.75rem;">
+        <div class="section-title-box" style="margin-bottom: 0.85rem;">
+          <div class="section-title">
+            <span class="step-circle">3</span>
+            <span>Brand Color Palette</span>
+          </div>
+          <span class="section-hint">Curated studio presets</span>
+        </div>
+
+        <div class="palette-chips-row" id="quickColorsRow">
+          <button class="palette-btn active" onclick="setBrandTheme('#6D5DFB', '#00C2FF', 'PixelCode')">
+            <span class="palette-dot" style="background: linear-gradient(135deg, #6D5DFB, #00C2FF);"></span>
+            <span>PixelCode Neon</span>
+          </button>
+          <button class="palette-btn" onclick="setBrandTheme('#09090B', '#09090B', 'Classic Ink')">
+            <span class="palette-dot" style="background: #09090B;"></span>
+            <span>Classic Ink</span>
+          </button>
+          <button class="palette-btn" onclick="setBrandTheme('#25D366', '#075E54', 'WhatsApp Green')">
+            <span class="palette-dot" style="background: #25D366;"></span>
+            <span>WhatsApp Green</span>
+          </button>
+          <button class="palette-btn" onclick="setBrandTheme('#0088CC', '#00C2FF', 'UPI Blue')">
+            <span class="palette-dot" style="background: #0088CC;"></span>
+            <span>UPI Pay Blue</span>
+          </button>
+          <button class="palette-btn" onclick="setBrandTheme('#D97706', '#B45309', 'Luxury Gold')">
+            <span class="palette-dot" style="background: #D97706;"></span>
+            <span>Luxury Gold</span>
+          </button>
+          <button class="palette-btn" onclick="setBrandTheme('#FF7A59', '#6D5DFB', 'Sunset Coral')">
+            <span class="palette-dot" style="background: linear-gradient(135deg, #FF7A59, #6D5DFB);"></span>
+            <span>Sunset Coral</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 4: ADVANCED VECTOR OPTIONS (Revealed when Advanced tab is active) -->
+      <div id="advancedOptionsSection" class="studio-card">
+        <div style="font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; color: var(--color-neon); margin-bottom: 1.25rem;">
+          🛠️ Advanced Vector QR Studio
+        </div>
+
+        <!-- Body Dot Pattern -->
+        <div class="form-group">
+          <label class="form-label">Body Dot Pattern</label>
+          <div class="options-pill-grid">
+            <button class="option-pill active" data-dot="dots" onclick="setDotStyle('dots')">Circles</button>
+            <button class="option-pill" data-dot="extra-rounded" onclick="setDotStyle('extra-rounded')">Squircle</button>
+            <button class="option-pill" data-dot="rounded" onclick="setDotStyle('rounded')">Rounded</button>
+            <button class="option-pill" data-dot="classy" onclick="setDotStyle('classy')">Diamond</button>
+            <button class="option-pill" data-dot="square" onclick="setDotStyle('square')">Square</button>
+          </div>
+        </div>
+
+        <!-- Corner Eye Styles -->
+        <div class="form-grid-2" style="margin-top: 1rem;">
+          <div class="form-group">
+            <label class="form-label">Eye Outer Frame</label>
+            <div class="options-pill-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+              <button class="option-pill active" data-eye="extra-rounded" onclick="setCornerSquare('extra-rounded')">Squircle</button>
+              <button class="option-pill" data-eye="dot" onclick="setCornerSquare('dot')">Circle</button>
+              <button class="option-pill" data-eye="square" onclick="setCornerSquare('square')">Square</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Eye Inner Ball</label>
+            <div class="options-pill-grid" style="grid-template-columns: 1fr 1fr;">
+              <button class="option-pill active" data-ball="dot" onclick="setCornerDot('dot')">Circle Dot</button>
+              <button class="option-pill" data-ball="square" onclick="setCornerDot('square')">Square Dot</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom Colors -->
+        <div class="form-grid-2" style="margin-top: 1rem;">
+          <div class="form-group">
+            <label class="form-label">Primary Color</label>
+            <div class="color-picker-box">
+              <input type="color" id="advColor1" value="#6D5DFB" onchange="updateAdvColors()" />
+              <input type="text" id="advColor1Hex" class="color-hex-field" value="#6D5DFB" readonly />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Gradient Color (Optional)</label>
+            <div class="color-picker-box">
+              <input type="color" id="advColor2" value="#00C2FF" onchange="updateAdvColors()" />
+              <input type="text" id="advColor2Hex" class="color-hex-field" value="#00C2FF" readonly />
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Logo Upload -->
+        <div class="form-group" style="margin-top: 1rem;">
+          <label class="form-label">Center Logo Upload (PNG / SVG)</label>
+          <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+            <input type="file" id="advLogoInput" accept="image/*" class="form-input" style="flex: 1; min-width: 200px; padding: 0.5rem;" onchange="handleLogoUpload(event)" />
+            <button class="btn-secondary-action" style="width: auto; padding: 0.6rem 1rem;" onclick="removeLogo()">Remove Logo</button>
+          </div>
+        </div>
+
+        <!-- Custom Frame Text Customizer -->
+        <div class="form-grid-2" style="margin-top: 1rem;">
+          <div class="form-group">
+            <label class="form-label">Frame Title (CTA)</label>
+            <input type="text" id="advCtaText" class="form-input" value="SCAN ME" oninput="updateCustomFrame()" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Frame Subtitle</label>
+            <input type="text" id="advSubText" class="form-input" value="Point phone camera to scan" oninput="updateCustomFrame()" />
+          </div>
+        </div>
+
+        <!-- Error Correction Level -->
+        <div class="form-group" style="margin-top: 1rem;">
+          <label class="form-label">Error Correction (Scan Tolerance)</label>
+          <div class="options-pill-grid" style="grid-template-columns: repeat(4, 1fr);">
+            <button class="option-pill" onclick="setErrorLevel('L')">L (7%)</button>
+            <button class="option-pill" onclick="setErrorLevel('M')">M (15%)</button>
+            <button class="option-pill" onclick="setErrorLevel('Q')">Q (25%)</button>
+            <button class="option-pill active" id="btnEcH" onclick="setErrorLevel('H')">H (30% Best)</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: LIVE CANVAS PREVIEW & EXPORT -->
+    <div class="preview-column">
+
+      <div class="preview-card" id="mainPreviewCard">
+        <div class="preview-label">Live Preview</div>
+
+        <!-- Live Drawn Canvas -->
+        <div class="preview-stage">
+          <canvas id="qrDisplayCanvas"></canvas>
+        </div>
+
+        <div class="preview-meta">
+          Ready to download or print
+        </div>
+      </div>
+
+      <!-- Export Panel -->
+      <div class="export-card">
+        <div class="res-selector-row">
+          <span style="font-weight: 700;">Resolution:</span>
+          <div class="res-btn-group">
+            <button class="res-btn" onclick="setExportResolution(1024, this)">1024px</button>
+            <button class="res-btn active" onclick="setExportResolution(2048, this)">2048px (HD)</button>
+            <button class="res-btn" onclick="setExportResolution(4096, this)">4096px (Print)</button>
+          </div>
+        </div>
+
+        <div class="download-actions-grid">
+          <button class="btn-download-primary" onclick="openDownloadModal('png')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+            <span>Download PNG</span>
+          </button>
+
+          <button class="btn-download-secondary" onclick="openDownloadModal('svg')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            <span>Download SVG</span>
+          </button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;">
+          <button class="btn-secondary-action" onclick="copyImageToClipboard()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+            <span>Copy Image</span>
+          </button>
+
+          <button class="btn-secondary-action" onclick="openDownloadModal('pdf')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/></svg>
+            <span>Printable PDF</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- DOWNLOAD PROMOTION MODAL -->
+  <div id="downloadModal" class="download-modal-backdrop" onclick="handleModalBackdropClick(event)">
+    <div class="download-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+      <!-- Modal Top Bar -->
+      <div class="modal-top-bar">
+        <div class="modal-title-group">
+          <div class="modal-ready-icon">✓</div>
+          <div class="modal-title" id="modalTitle">Your QR Code is Ready!</div>
+        </div>
+        <button class="modal-close-btn" onclick="closeDownloadModal()" aria-label="Close dialog">✕</button>
+      </div>
+
+      <!-- Prominent Download Trigger Box -->
+      <div class="modal-download-box">
+        <button id="modalDownloadBtn" class="btn-modal-trigger-download" onclick="triggerActualDownload()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+          <span id="modalDownloadBtnText">Download PNG (2048px Ultra HD)</span>
+        </button>
+
+        <div class="modal-download-specs">
+          <span>✨ Vector Sharpness</span>
+          <span>•</span>
+          <span id="modalFileSpecs">PNG • 2048 × 2048px</span>
+          <span>•</span>
+          <span>Commercial License</span>
+        </div>
+      </div>
+
+      <!-- Underneath: PixelCode Agency Services Promotion -->
+      <div class="agency-promo-card">
+        <div class="promo-badge-pill">
+          <span>✦</span> Need Websites or Mobile Apps?
+        </div>
+
+        <h3 class="promo-headline">
+          We build <span class="accent-glow">websites & mobile apps</span> that make businesses look expensive.
+        </h3>
+
+        <p class="promo-copy">
+          PixelCode creates high-converting websites, iOS/Android mobile applications, and custom software designed to get your business more inquiries, customers, and trust.
+        </p>
+
+        <div class="promo-services-list">
+          <span class="promo-tag">🌐 High-Converting Websites</span>
+          <span class="promo-tag">📱 iOS & Android Mobile Apps</span>
+          <span class="promo-tag">⚡ Custom Web Platforms & SaaS</span>
+          <span class="promo-tag">🎨 Brand Systems & UI/UX</span>
+          <span class="promo-tag">🛒 E-Commerce & Payments</span>
+        </div>
+
+        <div class="promo-action-row">
+          <a href="https://wa.me/919959607605?text=Hi%20PixelCode%2C%20I%20used%20your%20QR%20generator%20and%20I%20want%20to%20discuss%20a%20website%20or%20app%20for%20my%20business!" target="_blank" class="btn-promo-whatsapp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.455h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span>Chat on WhatsApp</span>
+          </a>
+          <a href="https://pixelcode.in" target="_blank" class="btn-promo-site">
+            <span>PixelCode.in ↗</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast-msg" style="display: none;"></div>
+
+  <!-- Floating Live QR Preview (Mobile Only - Always visible while scrolling) -->
+  <div id="mobileFloatingPreview" class="mobile-floating-pip" onclick="scrollToPreview()">
+    <div class="pip-header">
+      <div class="pip-live-badge">
+        <span class="pip-dot"></span>
+        <span>LIVE QR</span>
+      </div>
+      <button class="pip-expand-btn" onclick="scrollToPreview(); event.stopPropagation();" title="Scroll to Full Preview">↑ Full</button>
+    </div>
+    <div class="pip-canvas-wrap">
+      <canvas id="mobileFloatingCanvas"></canvas>
+    </div>
+    <button class="pip-quick-download" onclick="openDownloadModal('png'); event.stopPropagation();">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+      <span>Download</span>
+    </button>
+  </div>
+
+  <!-- Floating Brand Action Widget (Exact replica from pixelcode.in) -->
+  <div class="pixelcode-floating-widget">
+    <a href="https://wa.me/919959607605?text=Hi%20PixelCode%2C%20I%20am%20using%20your%20QR%20generator" target="_blank" class="float-wa-icon" aria-label="WhatsApp PixelCode" title="Chat on WhatsApp">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.455h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+    <span class="float-divider"></span>
+    <a href="https://pixelcode.in" target="_blank" class="float-agency-link">
+      PixelCode Agency ↗
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>PixelCode QR</strong> — High Resolution Commercial Vector Engine.
+      </div>
+      <div>
+        Built by <a href="https://pixelcode.in" target="_blank">PixelCode.in</a> • Websites, Branding & Creative That Make People Take Action.
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
