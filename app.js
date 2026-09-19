@@ -125,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindInputEvents();
   renderQR();
   initMobileFloatingPreviewObserver();
+  initDraggableMobilePreview();
 });
 
 function initMobileFloatingPreviewObserver() {
@@ -151,6 +152,92 @@ function initMobileFloatingPreviewObserver() {
 
     observer.observe(previewCard);
   }
+}
+
+// Draggable Floating Preview Controller for Mobile & Small Screens
+function initDraggableMobilePreview() {
+  const pip = document.getElementById('mobileFloatingPreview');
+  if (!pip) return;
+
+  let isDragging = false;
+  let startX = 0;
+  let startY = 0;
+  let initialLeft = 0;
+  let initialTop = 0;
+  let hasMoved = false;
+
+  function onDragStart(e) {
+    // Don't initiate drag if clicking on interactive buttons inside
+    if (e.target.closest('button')) return;
+
+    const touch = e.touches ? e.touches[0] : e;
+    startX = touch.clientX;
+    startY = touch.clientY;
+
+    const rect = pip.getBoundingClientRect();
+    initialLeft = rect.left;
+    initialTop = rect.top;
+    hasMoved = false;
+    isDragging = true;
+
+    pip.classList.add('is-dragging');
+
+    // Switch from right/bottom to absolute left/top coordinates
+    pip.style.right = 'auto';
+    pip.style.bottom = 'auto';
+    pip.style.left = `${initialLeft}px`;
+    pip.style.top = `${initialTop}px`;
+  }
+
+  function onDragMove(e) {
+    if (!isDragging) return;
+
+    const touch = e.touches ? e.touches[0] : e;
+    const dx = touch.clientX - startX;
+    const dy = touch.clientY - startY;
+
+    if (Math.abs(dx) > 3 || Math.abs(dy) > 3) {
+      hasMoved = true;
+      if (e.cancelable) e.preventDefault(); // Prevent accidental scroll
+    }
+
+    const pipWidth = pip.offsetWidth || 114;
+    const pipHeight = pip.offsetHeight || 155;
+
+    // Viewport bounds with padding
+    const minX = 8;
+    const maxX = window.innerWidth - pipWidth - 8;
+    const minY = 50;
+    const maxY = window.innerHeight - pipHeight - 12;
+
+    const newLeft = Math.min(Math.max(initialLeft + dx, minX), maxX);
+    const newTop = Math.min(Math.max(initialTop + dy, minY), maxY);
+
+    pip.style.left = `${newLeft}px`;
+    pip.style.top = `${newTop}px`;
+  }
+
+  function onDragEnd() {
+    if (!isDragging) return;
+    isDragging = false;
+    pip.classList.remove('is-dragging');
+
+    if (hasMoved) {
+      pip._justDragged = true;
+      setTimeout(() => {
+        pip._justDragged = false;
+      }, 180);
+    }
+  }
+
+  // Pointer & Touch Events
+  pip.addEventListener('mousedown', onDragStart);
+  window.addEventListener('mousemove', onDragMove, { passive: false });
+  window.addEventListener('mouseup', onDragEnd);
+
+  pip.addEventListener('touchstart', onDragStart, { passive: true });
+  window.addEventListener('touchmove', onDragMove, { passive: false });
+  window.addEventListener('touchend', onDragEnd);
 }
 
 // Render the 10 Templates in Step 2
@@ -1077,6 +1164,9 @@ function triggerActualDownload() {
 // ============================================================================
 
 function scrollToPreview() {
+  const pip = document.getElementById('mobileFloatingPreview');
+  if (pip && pip._justDragged) return; // Prevent scroll after drag repositioning
+
   const el = document.getElementById('mainPreviewCard');
   if (el) {
     el.scrollIntoView({ behavior: 'smooth', block: 'center' });

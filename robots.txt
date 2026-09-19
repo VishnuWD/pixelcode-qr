@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Canonical Sitemap for Google, Bing, Yandex
+Sitemap: https://pixelcode.in/qr/sitemap.xml
