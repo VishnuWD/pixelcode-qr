@@ -2,992 +2,535 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
   
-  <!-- Primary SEO Meta Tags (Rank #1 Optimization) -->
-  <title>Free QR Code Generator with Logo & Vector SVG, PDF | PixelCode QR Studio</title>
-  <meta name="title" content="Free QR Code Generator with Logo & Vector SVG, PDF | PixelCode QR Studio" />
-  <meta name="description" content="Generate 100% free permanent QR codes with custom logo, colors, and designer frames. Zero expiration, no sign-up. Export vector SVG, ultra HD PNG & print-ready PDF." />
-  <meta name="keywords" content="free qr code generator, qr code with logo, vector qr code generator, custom qr code, qr code generator no sign up, permanent qr code free, upi qr code standee, qr code for restaurant menu, svg qr code, high resolution qr code, commercial qr code generator, printable qr code, lifetime free qr code" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="author" content="PixelCode (https://pixelcode.in)" />
-  <meta name="publisher" content="PixelCode" />
-  <link rel="canonical" href="https://pixelcode.in/qr/" />
-
-  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:site_name" content="PixelCode QR Studio" />
-  <meta property="og:title" content="Free QR Code Generator with Logo & Vector SVG, PDF | PixelCode" />
-  <meta property="og:description" content="Generate 100% permanent, high-converting vector QR codes with custom logos, UPI payment standees, and designer frames. Free forever with zero expiration." />
-  <meta property="og:url" content="https://pixelcode.in/qr/" />
-  <meta property="og:image" content="https://pixelcode.in/qr/pixelcode-logo.png" />
-  <meta property="og:image:width" content="512" />
-  <meta property="og:image:height" content="512" />
-  <meta property="og:image:alt" content="PixelCode QR Generator Logo & Vector Studio" />
-
-  <!-- Twitter Card Protocol -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@pixelcode_in" />
-  <meta name="twitter:creator" content="@pixelcode_in" />
-  <meta name="twitter:title" content="Free QR Code Generator with Logo & Vector SVG, PDF" />
-  <meta name="twitter:description" content="100% free permanent QR codes with logo, designer frames, UPI standees & vector export." />
-  <meta name="twitter:image" content="https://pixelcode.in/qr/pixelcode-logo.png" />
-
-  <!-- Mobile Browser Styling -->
-  <meta name="theme-color" content="#09090B" />
+  <title>QR &amp; Barcode Generator</title>
+  <meta name="description" content="Generate high-resolution QR codes and barcodes instantly with custom logos, UPI payment standees, and vector export." />
+  
+  <!-- Mobile Status Bar & Navigation Styling -->
+  <meta name="theme-color" content="#FFFFFF" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="PixelCode QR" />
-  <meta name="application-name" content="PixelCode QR Studio" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="QR &amp; Barcode" />
 
-  <!-- Fonts: Sora (Headings) & Inter (UI) from pixelcode.in -->
+  <!-- Google Sans / Inter Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <link rel="icon" href="pixelcode-logo.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Bundled Local Libraries -->
+  <!-- Bundled Local Libraries (100% Offline & Private) -->
   <script src="vendor/qr-code-styling.js"></script>
+  <script src="vendor/jsbarcode.min.js"></script>
   <script src="vendor/jspdf.umd.min.js"></script>
-
-  <!-- JSON-LD Structured Data Schema (Google Search Engine Rich Results) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://pixelcode.in/qr/#webapp",
-        "name": "PixelCode QR Studio",
-        "url": "https://pixelcode.in/qr/",
-        "description": "Professional free QR code generator with custom logos, vector SVG export, print-ready PDF, and designer standees.",
-        "applicationCategory": "DesignApplication, UtilitiesApplication",
-        "operatingSystem": "All (Web, iOS, Android, Windows, macOS, Linux)",
-        "browserRequirements": "Requires JavaScript. Requires HTML5 Canvas.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "ratingCount": "3250",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
-        "featureList": [
-          "100% Free Lifetime Static QR Codes",
-          "Zero Expiration or Hidden Paywalls",
-          "Vector SVG & High-Resolution PNG (2048px) Downloads",
-          "Print-Ready PDF with Commercial Standee Frames",
-          "Custom Logo & Brand Palette Integration",
-          "UPI Payment QR Standees (GPay, PhonePe, Paytm, BHIM)",
-          "Draggable Mobile Live Preview"
-        ]
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://pixelcode.in/#organization",
-        "name": "PixelCode",
-        "url": "https://pixelcode.in",
-        "logo": "https://pixelcode.in/qr/pixelcode-logo.png",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+919959607605",
-          "contactType": "customer service",
-          "availableLanguage": ["English", "Hindi", "Telugu"]
-        },
-        "sameAs": [
-          "https://pixelcode.in"
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://pixelcode.in/qr/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Are QR codes generated on PixelCode really 100% free and permanent?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes! All static QR codes generated by PixelCode QR are 100% free forever and never expire. Unlike competitor services that disable your QR codes after 14 days or demand monthly subscriptions, our QR codes directly encode your destination data directly into the matrix, functioning permanently for life."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I add my company logo and brand colors to the QR code?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolutely. You can upload any custom PNG, JPG, or SVG company logo. Our engine automatically centers the logo and applies high error correction (Level H - 30% error tolerance) to guarantee instant, 100% scannable recognition on all iOS and Android smartphone cameras."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I download vector SVG and print-ready PDF files for commercial printing?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. PixelCode QR provides one-click export for infinite resolution Vector SVG and print-ready vector PDF files with embedded typography, making them ready for professional commercial printing on storefront standees, acrylic signs, restaurant menus, and large-format billboards."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I create a UPI payment QR code standee for my business?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Simply switch the Content Type to 'UPI Pay', enter your UPI ID (VPA) and business name, select the 'UPI / Pay Standee' frame, and your standee is automatically styled with official payment badge cues supporting Google Pay, PhonePe, Paytm, and BHIM UPI."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do I need to create an account or sign up to download QR codes?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No sign-up or credit card is ever required. PixelCode QR runs client-side in your browser for instant creation, zero tracking, and complete privacy."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "HowTo",
-        "@id": "https://pixelcode.in/qr/#howto",
-        "name": "How to Generate a High-Converting Custom QR Code",
-        "description": "Step-by-step tutorial on generating a permanent, high-converting designer QR code with custom logo and vector export.",
-        "step": [
-          {
-            "@type": "HowToStep",
-            "position": 1,
-            "name": "Choose Content Type",
-            "text": "Select your desired QR code payload: Website URL, UPI Payment, Wi-Fi network, vCard contact, or WhatsApp message."
-          },
-          {
-            "@type": "HowToStep",
-            "position": 2,
-            "name": "Pick a Designer Standee or Barebone Frame",
-            "text": "Choose from 10 curated marketing templates including Classic Scan Me, UPI Counter Standee, Restaurant Menu, or raw Barebone QR."
-          },
-          {
-            "@type": "HowToStep",
-            "position": 3,
-            "name": "Customize Brand Palette & Logo",
-            "text": "Select from curated brand gradients or define custom colors. Upload your brand logo for instant recognition."
-          },
-          {
-            "@type": "HowToStep",
-            "position": 4,
-            "name": "Export High-Res PNG, SVG, or PDF",
-            "text": "Download crystal-clear 2048px Ultra HD PNG for web or vector SVG and print PDF for physical standees and signage."
-          }
-        ]
-      }
-    ]
-  }
-  </script>
 </head>
 <body>
 
-  <!-- Navigation Bar (Glass effect from pixelcode.in) -->
-  <header class="app-header">
-    <div class="header-glass">
-      <a href="https://pixelcode.in" target="_blank" class="brand-wrapper">
-        <img src="pixelcode-logo.png" alt="PixelCode Logo" class="brand-logo-img" />
-        <div>
-          <div class="brand-name">
-            PixelCode <span class="brand-badge">QR</span>
-          </div>
-          <div class="brand-tagline">Not just pretty. Persuasive.</div>
+  <!-- Top Native App Bar -->
+  <header class="mobile-app-bar">
+    <div class="app-bar-inner">
+      <div class="app-branding">
+        <div class="app-logo-badge">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A73E8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+            <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+            <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+            <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+          </svg>
         </div>
-      </a>
-
-      <!-- Mode Switcher: Basic vs Advanced -->
-      <div class="mode-switch-pill">
-        <button id="modeBasicBtn" class="mode-tab-btn active" onclick="switchMode('basic')">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          <span>Basic Mode</span>
-        </button>
-        <button id="modeAdvancedBtn" class="mode-tab-btn" onclick="switchMode('advanced')">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
-          <span>Advanced Mode</span>
-        </button>
+        <div class="app-titles">
+          <h1 id="appHeaderTitle" class="app-main-title">QR Generator</h1>
+          <p id="appHeaderSubtitle" class="app-sub-title">Create anything into a QR code</p>
+        </div>
       </div>
-
-      <div class="header-right">
-        <button id="privacyInfoBtn" class="btn-privacy-link" onclick="openPrivacyModal()" title="Privacy Policy & Security Info" aria-label="Privacy & Security">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <span>Privacy & Security</span>
-        </button>
-        <a href="https://pixelcode.in" target="_blank" rel="noopener noreferrer" class="btn-pixelcode-link" onclick="openExternalUrl(event, 'https://pixelcode.in')">
-          <span>PixelCode.in</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-        </a>
-      </div>
+      <button class="icon-btn-settings" onclick="openSheet('settingsSheet')" aria-label="Settings and Privacy" title="Settings &amp; Privacy">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+      </button>
     </div>
   </header>
 
-  <!-- Live Marquee Strip from pixelcode.in -->
-  <div class="marquee-strip">
-    <div class="marquee-track">
-      <span><span class="marquee-dot"></span> WEBSITES THAT CONVERT</span>
-      <span><span class="marquee-dot"></span> BRANDING THAT LOOKS EXPENSIVE</span>
-      <span><span class="marquee-dot"></span> COMMERCIAL VECTOR QR</span>
-      <span><span class="marquee-dot"></span> ULTRA-HD PNG & SVG EXPORT</span>
-      <span><span class="marquee-dot"></span> UPI STANDS & WHATSAPP CARDS</span>
-      <span><span class="marquee-dot"></span> NOT JUST PRETTY. PERSUASIVE.</span>
-      <span><span class="marquee-dot"></span> WEBSITES THAT CONVERT</span>
-      <span><span class="marquee-dot"></span> BRANDING THAT LOOKS EXPENSIVE</span>
-      <span><span class="marquee-dot"></span> COMMERCIAL VECTOR QR</span>
-      <span><span class="marquee-dot"></span> ULTRA-HD PNG & SVG EXPORT</span>
-      <span><span class="marquee-dot"></span> UPI STANDS & WHATSAPP CARDS</span>
-      <span><span class="marquee-dot"></span> NOT JUST PRETTY. PERSUASIVE.</span>
-    </div>
-  </div>
+  <!-- Main Scrollable App Container -->
+  <main class="mobile-viewport">
 
-  <!-- Hero Intro Section (Direct PixelCode Aesthetics) -->
-  <section class="hero-container">
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
-
-    <div class="hero-badge-pill">
-      <span class="hero-pulse-lime"></span>
-      <span>PixelCode Vector Engine • Free & Commercial Ready</span>
-    </div>
-
-    <h1 class="hero-h1">
-      Create custom QR codes that <span class="text-gradient">look expensive.</span>
-    </h1>
-    <p class="hero-p">
-      Generate clean barebone vector codes or designer stands for payments, menus, Wi-Fi, and contacts.
-    </p>
-  </section>
-
-  <!-- Main Workspace Grid -->
-  <main class="workspace-grid">
-
-    <!-- LEFT COLUMN: CONTROLS & SETTINGS -->
-    <div class="controls-column">
-
-      <!-- MERGED STUDIO CARD: 1. CONTENT + 2. TEMPLATE SELECTION -->
-      <div class="studio-card">
-
-        <!-- Section 1: Content Type & Inputs -->
-        <div>
-          <div class="section-title-box">
-            <div class="section-title">
-              <span class="step-circle">1</span>
-              <span>Enter Your Content</span>
-            </div>
-            <span class="section-hint">Choose destination type</span>
-          </div>
-
-          <!-- Content Type Tabs -->
-          <div class="content-type-nav">
-            <button class="type-btn active" data-type="url" onclick="selectType('url')">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-              <span>Website URL</span>
-            </button>
-            <button class="type-btn" data-type="whatsapp" onclick="selectType('whatsapp')">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-              <span>WhatsApp</span>
-            </button>
-            <button class="type-btn" data-type="upi" onclick="selectType('upi')">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              <span>UPI Pay</span>
-            </button>
-            <button class="type-btn" data-type="wifi" onclick="selectType('wifi')">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>
-              <span>Wi-Fi Access</span>
-            </button>
-            <button class="type-btn" data-type="vcard" onclick="selectType('vcard')">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>
-              <span>Contact Card</span>
-            </button>
-            <button class="type-btn" data-type="text" onclick="selectType('text')">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="9"/><line x1="4" x2="20" y1="15"/><line x1="10" x2="8" y1="3"/><line x1="16" x2="14" y1="21"/></svg>
-              <span>Plain Text</span>
-            </button>
-          </div>
-
-          <!-- Dynamic Form Panels -->
-          <div id="formsWrapper">
-
-            <!-- URL Form -->
-            <div class="form-panel active" id="form-url">
-              <div class="form-group">
-                <label class="form-label">Destination Website URL</label>
-                <input type="url" id="inputUrl" class="form-input" placeholder="https://pixelcode.in" value="https://pixelcode.in" />
-              </div>
-            </div>
-
-            <!-- WhatsApp Form -->
-            <div class="form-panel" id="form-whatsapp">
-              <div class="form-group">
-                <label class="form-label">Phone Number (with country code)</label>
-                <input type="tel" id="waPhone" class="form-input" placeholder="919959607605" value="919959607605" />
-              </div>
-              <div class="form-group">
-                <label class="form-label">Pre-filled Chat Message</label>
-                <input type="text" id="waMessage" class="form-input" value="Hi PixelCode, I want to discuss a project!" />
-              </div>
-            </div>
-
-            <!-- UPI Form -->
-            <div class="form-panel" id="form-upi">
-              <div class="form-grid-2">
-                <div class="form-group">
-                  <label class="form-label">UPI VPA / ID</label>
-                  <input type="text" id="upiId" class="form-input" placeholder="username@okhdfcbank" value="pixelcode@upi" />
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Payee Business Name</label>
-                  <input type="text" id="upiName" class="form-input" placeholder="Store or Brand Name" value="PixelCode Creative" />
-                </div>
-              </div>
-              <div class="form-grid-2" style="margin-top: 0.75rem;">
-                <div class="form-group">
-                  <label class="form-label">Fixed Amount (Optional ₹)</label>
-                  <input type="number" id="upiAmount" class="form-input" placeholder="Leave empty for open amount" />
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Payment Note</label>
-                  <input type="text" id="upiNote" class="form-input" value="PixelCode Services" />
-                </div>
-              </div>
-            </div>
-
-            <!-- Wi-Fi Form -->
-            <div class="form-panel" id="form-wifi">
-              <div class="form-group">
-                <label class="form-label">Network Name (SSID)</label>
-                <input type="text" id="wifiSsid" class="form-input" placeholder="e.g. PixelCode_Guest" value="PixelCode_Guest" />
-              </div>
-              <div class="form-grid-2" style="margin-top: 0.75rem;">
-                <div class="form-group">
-                  <label class="form-label">Wi-Fi Password</label>
-                  <input type="text" id="wifiPass" class="form-input" placeholder="Network password" value="CreateSharp2026" />
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Security Type</label>
-                  <select id="wifiType" class="form-select">
-                    <option value="WPA" selected>WPA / WPA2 (Standard)</option>
-                    <option value="nopass">Open Network (No Password)</option>
-                    <option value="WEP">WEP (Legacy)</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <!-- vCard Form -->
-            <div class="form-panel" id="form-vcard">
-              <div class="form-grid-2">
-                <div class="form-group">
-                  <label class="form-label">Full Name</label>
-                  <input type="text" id="vcardName" class="form-input" value="Vishnu | PixelCode" />
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Role / Job Title</label>
-                  <input type="text" id="vcardTitle" class="form-input" value="Creative Director" />
-                </div>
-              </div>
-              <div class="form-grid-2" style="margin-top: 0.75rem;">
-                <div class="form-group">
-                  <label class="form-label">Phone Number</label>
-                  <input type="tel" id="vcardPhone" class="form-input" value="+919959607605" />
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Email Address</label>
-                  <input type="email" id="vcardEmail" class="form-input" value="info@pixelcode.in" />
-                </div>
-              </div>
-            </div>
-
-            <!-- Plain Text Form -->
-            <div class="form-panel" id="form-text">
-              <div class="form-group">
-                <label class="form-label">Plain Text Content</label>
-                <textarea id="plainText" class="form-textarea" placeholder="Type or paste any text...">PixelCode — Not just pretty. Persuasive.
-Website: https://pixelcode.in
-WhatsApp: +919959607605</textarea>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Clean Divider between Content & Templates -->
-        <div class="card-divider"></div>
-
-        <!-- Section 2: Designer Layout & Barebone Selector -->
-        <div>
-          <div class="section-title-box">
-            <div class="section-title">
-              <span class="step-circle">2</span>
-              <span>Choose Layout & Frame</span>
-            </div>
-            <span class="section-hint">Raw barebone or styled frame</span>
-          </div>
-
-          <!-- Templates Grid (Barebone is prominent first tile) -->
-          <div class="templates-grid" id="templatesGrid">
-            <!-- Injected by app.js -->
-          </div>
-        </div>
-
+    <!-- Segmented Mode Control (QR vs Barcode) -->
+    <div class="segmented-control-wrap">
+      <div class="segmented-control" role="tablist">
+        <button id="tabBtnQR" class="segment-btn active" role="tab" aria-selected="true" onclick="switchMainMode('qr')">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+            <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+            <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+            <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+          </svg>
+          <span>QR Code</span>
+        </button>
+        <button id="tabBtnBarcode" class="segment-btn" role="tab" aria-selected="false" onclick="switchMainMode('barcode')">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="3" y1="5" x2="3" y2="19"></line>
+            <line x1="7" y1="5" x2="7" y2="19"></line>
+            <line x1="11" y1="5" x2="11" y2="19"></line>
+            <line x1="14" y1="5" x2="14" y2="19"></line>
+            <line x1="18" y1="5" x2="18" y2="19"></line>
+            <line x1="21" y1="5" x2="21" y2="19"></line>
+          </svg>
+          <span>Barcode</span>
+        </button>
       </div>
-
-      <!-- STEP 3: BRAND COLOR PALETTE -->
-      <div class="studio-card" style="padding: 1.5rem 1.75rem;">
-        <div class="section-title-box" style="margin-bottom: 0.85rem;">
-          <div class="section-title">
-            <span class="step-circle">3</span>
-            <span>Brand Color Palette</span>
-          </div>
-          <span class="section-hint">Curated studio presets</span>
-        </div>
-
-        <div class="palette-chips-row" id="quickColorsRow">
-          <button class="palette-btn active" onclick="setBrandTheme('#6D5DFB', '#00C2FF', 'PixelCode')">
-            <span class="palette-dot" style="background: linear-gradient(135deg, #6D5DFB, #00C2FF);"></span>
-            <span>PixelCode Neon</span>
-          </button>
-          <button class="palette-btn" onclick="setBrandTheme('#09090B', '#09090B', 'Classic Ink')">
-            <span class="palette-dot" style="background: #09090B;"></span>
-            <span>Classic Ink</span>
-          </button>
-          <button class="palette-btn" onclick="setBrandTheme('#25D366', '#075E54', 'WhatsApp Green')">
-            <span class="palette-dot" style="background: #25D366;"></span>
-            <span>WhatsApp Green</span>
-          </button>
-          <button class="palette-btn" onclick="setBrandTheme('#0088CC', '#00C2FF', 'UPI Blue')">
-            <span class="palette-dot" style="background: #0088CC;"></span>
-            <span>UPI Pay Blue</span>
-          </button>
-          <button class="palette-btn" onclick="setBrandTheme('#D97706', '#B45309', 'Luxury Gold')">
-            <span class="palette-dot" style="background: #D97706;"></span>
-            <span>Luxury Gold</span>
-          </button>
-          <button class="palette-btn" onclick="setBrandTheme('#FF7A59', '#6D5DFB', 'Sunset Coral')">
-            <span class="palette-dot" style="background: linear-gradient(135deg, #FF7A59, #6D5DFB);"></span>
-            <span>Sunset Coral</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- STEP 4: ADVANCED VECTOR OPTIONS (Revealed when Advanced tab is active) -->
-      <div id="advancedOptionsSection" class="studio-card">
-        <div style="font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; color: var(--color-neon); margin-bottom: 1.25rem;">
-          🛠️ Advanced Vector QR Studio
-        </div>
-
-        <!-- Body Dot Pattern -->
-        <div class="form-group">
-          <label class="form-label">Body Dot Pattern</label>
-          <div class="options-pill-grid">
-            <button class="option-pill active" data-dot="dots" onclick="setDotStyle('dots')">Circles</button>
-            <button class="option-pill" data-dot="extra-rounded" onclick="setDotStyle('extra-rounded')">Squircle</button>
-            <button class="option-pill" data-dot="rounded" onclick="setDotStyle('rounded')">Rounded</button>
-            <button class="option-pill" data-dot="classy" onclick="setDotStyle('classy')">Diamond</button>
-            <button class="option-pill" data-dot="square" onclick="setDotStyle('square')">Square</button>
-          </div>
-        </div>
-
-        <!-- Corner Eye Styles -->
-        <div class="form-grid-2" style="margin-top: 1rem;">
-          <div class="form-group">
-            <label class="form-label">Eye Outer Frame</label>
-            <div class="options-pill-grid" style="grid-template-columns: 1fr 1fr 1fr;">
-              <button class="option-pill active" data-eye="extra-rounded" onclick="setCornerSquare('extra-rounded')">Squircle</button>
-              <button class="option-pill" data-eye="dot" onclick="setCornerSquare('dot')">Circle</button>
-              <button class="option-pill" data-eye="square" onclick="setCornerSquare('square')">Square</button>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Eye Inner Ball</label>
-            <div class="options-pill-grid" style="grid-template-columns: 1fr 1fr;">
-              <button class="option-pill active" data-ball="dot" onclick="setCornerDot('dot')">Circle Dot</button>
-              <button class="option-pill" data-ball="square" onclick="setCornerDot('square')">Square Dot</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Custom Colors -->
-        <div class="form-grid-2" style="margin-top: 1rem;">
-          <div class="form-group">
-            <label class="form-label">Primary Color</label>
-            <div class="color-picker-box">
-              <input type="color" id="advColor1" value="#6D5DFB" onchange="updateAdvColors()" />
-              <input type="text" id="advColor1Hex" class="color-hex-field" value="#6D5DFB" readonly />
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Gradient Color (Optional)</label>
-            <div class="color-picker-box">
-              <input type="color" id="advColor2" value="#00C2FF" onchange="updateAdvColors()" />
-              <input type="text" id="advColor2Hex" class="color-hex-field" value="#00C2FF" readonly />
-            </div>
-          </div>
-        </div>
-
-        <!-- Center Logo Upload -->
-        <div class="form-group" style="margin-top: 1rem;">
-          <label class="form-label">Center Logo Upload (PNG / SVG)</label>
-          <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
-            <input type="file" id="advLogoInput" accept="image/*" class="form-input" style="flex: 1; min-width: 200px; padding: 0.5rem;" onchange="handleLogoUpload(event)" />
-            <button class="btn-secondary-action" style="width: auto; padding: 0.6rem 1rem;" onclick="removeLogo()">Remove Logo</button>
-          </div>
-        </div>
-
-        <!-- Custom Frame Text Customizer -->
-        <div class="form-grid-2" style="margin-top: 1rem;">
-          <div class="form-group">
-            <label class="form-label">Frame Title (CTA)</label>
-            <input type="text" id="advCtaText" class="form-input" value="SCAN ME" oninput="updateCustomFrame()" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">Frame Subtitle</label>
-            <input type="text" id="advSubText" class="form-input" value="Point phone camera to scan" oninput="updateCustomFrame()" />
-          </div>
-        </div>
-
-        <!-- Error Correction Level -->
-        <div class="form-group" style="margin-top: 1rem;">
-          <label class="form-label">Error Correction (Scan Tolerance)</label>
-          <div class="options-pill-grid" style="grid-template-columns: repeat(4, 1fr);">
-            <button class="option-pill" onclick="setErrorLevel('L')">L (7%)</button>
-            <button class="option-pill" onclick="setErrorLevel('M')">M (15%)</button>
-            <button class="option-pill" onclick="setErrorLevel('Q')">Q (25%)</button>
-            <button class="option-pill active" id="btnEcH" onclick="setErrorLevel('H')">H (30% Best)</button>
-          </div>
-        </div>
-
-      </div>
-
     </div>
 
-    <!-- RIGHT COLUMN: LIVE CANVAS PREVIEW & EXPORT -->
-    <div class="preview-column">
+    <!-- Category Chips (Horizontal Scroll) -->
+    <section class="chips-slider-section">
+      <!-- QR Types -->
+      <div id="qrChipsContainer" class="chips-scroll-track">
+        <button class="chip-item active" data-type="url" onclick="selectType('url')">
+          <span class="chip-icon-box chip-blue">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+          </span>
+          <span>Website</span>
+        </button>
+        <button class="chip-item" data-type="whatsapp" onclick="selectType('whatsapp')">
+          <span class="chip-icon-box chip-green">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.455h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </span>
+          <span>WhatsApp</span>
+        </button>
+        <button class="chip-item" data-type="upi" onclick="selectType('upi')">
+          <span class="chip-icon-box chip-coral">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </span>
+          <span>UPI Pay</span>
+        </button>
+        <button class="chip-item" data-type="wifi" onclick="selectType('wifi')">
+          <span class="chip-icon-box chip-amber">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 20h.01"></path><path d="M2 8.82a15 15 0 0 1 20 0"></path><path d="M5 12.859a10 10 0 0 1 14 0"></path><path d="M8.5 16.429a5 5 0 0 1 7 0"></path></svg>
+          </span>
+          <span>Wi-Fi</span>
+        </button>
+        <button class="chip-item" data-type="vcard" onclick="selectType('vcard')">
+          <span class="chip-icon-box chip-purple">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path></svg>
+          </span>
+          <span>Contact</span>
+        </button>
+        <button class="chip-item" data-type="text" onclick="selectType('text')">
+          <span class="chip-icon-box chip-blue">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
+          </span>
+          <span>Text</span>
+        </button>
+      </div>
 
-      <div class="preview-card" id="mainPreviewCard">
-        <div class="preview-label">Live Preview</div>
+      <!-- Barcode Types -->
+      <div id="barcodeChipsContainer" class="chips-scroll-track" style="display: none;">
+        <button class="chip-item active" data-bformat="CODE128" onclick="selectBarcodeFormat('CODE128')">
+          <span class="chip-icon-box chip-blue">128</span>
+          <span>Code 128 (Universal)</span>
+        </button>
+        <button class="chip-item" data-bformat="EAN13" onclick="selectBarcodeFormat('EAN13')">
+          <span class="chip-icon-box chip-green">EAN</span>
+          <span>EAN-13 (Retail)</span>
+        </button>
+        <button class="chip-item" data-bformat="UPC" onclick="selectBarcodeFormat('UPC')">
+          <span class="chip-icon-box chip-amber">UPC</span>
+          <span>UPC-A (12-Digit)</span>
+        </button>
+        <button class="chip-item" data-bformat="CODE39" onclick="selectBarcodeFormat('CODE39')">
+          <span class="chip-icon-box chip-coral">39</span>
+          <span>Code 39 (Logistics)</span>
+        </button>
+        <button class="chip-item" data-bformat="ITF" onclick="selectBarcodeFormat('ITF')">
+          <span class="chip-icon-box chip-purple">ITF</span>
+          <span>ITF (Numbers)</span>
+        </button>
+      </div>
+    </section>
 
-        <!-- Live Drawn Canvas -->
-        <div class="preview-stage">
-          <canvas id="qrDisplayCanvas"></canvas>
-        </div>
-
-        <div class="preview-meta">
-          Ready to download or print
+    <!-- Native Input Card -->
+    <section class="card-mobile-input">
+      <!-- QR: URL Input -->
+      <div id="inputGroupUrl" class="input-form-group">
+        <div class="input-wrapper-pill">
+          <span class="input-leading-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2.2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          </span>
+          <input type="url" id="inputUrl" class="native-input" placeholder="Enter text, link or anything..." value="https://pixelcode.in" oninput="onInputChange()" />
+          <button class="btn-input-action" onclick="pasteClipboardToInput('inputUrl')" title="Paste from clipboard">
+            <span>Paste</span>
+          </button>
         </div>
       </div>
 
-      <!-- Export Panel -->
-      <div class="export-card">
-        <div class="res-selector-row">
-          <span style="font-weight: 700;">Resolution:</span>
-          <div class="res-btn-group">
-            <button class="res-btn" onclick="setExportResolution(1024, this)">1024px</button>
-            <button class="res-btn active" onclick="setExportResolution(2048, this)">2048px (HD)</button>
-            <button class="res-btn" onclick="setExportResolution(4096, this)">4096px (Print)</button>
+      <!-- QR: WhatsApp Input -->
+      <div id="inputGroupWhatsapp" class="input-form-group" style="display: none;">
+        <div class="input-wrapper-pill">
+          <span class="input-leading-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" color="#22c55e"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.455h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </span>
+          <input type="tel" id="inputWaPhone" class="native-input" placeholder="Phone with country code (e.g. 919959607605)" oninput="onInputChange()" />
+        </div>
+        <div class="input-wrapper-pill" style="margin-top: 0.6rem;">
+          <input type="text" id="inputWaMsg" class="native-input" placeholder="Pre-filled message (optional)" oninput="onInputChange()" />
+        </div>
+      </div>
+
+      <!-- QR: UPI Input -->
+      <div id="inputGroupUpi" class="input-form-group" style="display: none;">
+        <div class="input-wrapper-pill">
+          <span class="input-leading-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </span>
+          <input type="text" id="inputUpiVpa" class="native-input" placeholder="UPI VPA ID (e.g. yourname@okaxis / @paytm)" value="pixelcode@upi" oninput="onInputChange()" />
+        </div>
+        <div class="upi-secondary-inputs">
+          <input type="text" id="inputUpiName" class="native-input-compact" placeholder="Payee Name (e.g. PixelCode)" oninput="onInputChange()" />
+          <input type="number" id="inputUpiAmount" class="native-input-compact" placeholder="₹ Amount (optional)" oninput="onInputChange()" />
+        </div>
+      </div>
+
+      <!-- QR: Wi-Fi Input -->
+      <div id="inputGroupWifi" class="input-form-group" style="display: none;">
+        <div class="input-wrapper-pill">
+          <span class="input-leading-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.2"><path d="M12 20h.01"></path><path d="M2 8.82a15 15 0 0 1 20 0"></path><path d="M5 12.859a10 10 0 0 1 14 0"></path><path d="M8.5 16.429a5 5 0 0 1 7 0"></path></svg>
+          </span>
+          <input type="text" id="inputWifiSsid" class="native-input" placeholder="Wi-Fi Network Name (SSID)" oninput="onInputChange()" />
+        </div>
+        <div class="input-wrapper-pill" style="margin-top: 0.6rem;">
+          <input type="text" id="inputWifiPass" class="native-input" placeholder="Wi-Fi Password" oninput="onInputChange()" />
+        </div>
+      </div>
+
+      <!-- QR: Contact vCard Input -->
+      <div id="inputGroupVcard" class="input-form-group" style="display: none;">
+        <div class="input-wrapper-pill">
+          <input type="text" id="inputVcardName" class="native-input" placeholder="Full Name" oninput="onInputChange()" />
+        </div>
+        <div class="upi-secondary-inputs" style="margin-top: 0.6rem;">
+          <input type="tel" id="inputVcardPhone" class="native-input-compact" placeholder="Phone Number" oninput="onInputChange()" />
+          <input type="email" id="inputVcardEmail" class="native-input-compact" placeholder="Email Address" oninput="onInputChange()" />
+        </div>
+      </div>
+
+      <!-- QR: Text Input -->
+      <div id="inputGroupText" class="input-form-group" style="display: none;">
+        <textarea id="inputText" class="native-textarea" rows="2" placeholder="Type plain text message or note..." oninput="onInputChange()"></textarea>
+      </div>
+
+      <!-- BARCODE Input -->
+      <div id="inputGroupBarcode" class="input-form-group" style="display: none;">
+        <div class="input-wrapper-pill">
+          <span class="input-leading-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2.2"><line x1="3" y1="5" x2="3" y2="19"></line><line x1="7" y1="5" x2="7" y2="19"></line><line x1="11" y1="5" x2="11" y2="19"></line><line x1="15" y1="5" x2="15" y2="19"></line><line x1="19" y1="5" x2="19" y2="19"></line></svg>
+          </span>
+          <input type="text" id="inputBarcodeValue" class="native-input" placeholder="Enter barcode number or code..." value="123456789012" oninput="onBarcodeInputChange()" />
+          <button class="btn-input-action" onclick="pasteClipboardToInput('inputBarcodeValue')" title="Paste">
+            <span>Paste</span>
+          </button>
+        </div>
+        <p id="barcodeHelperText" class="input-helper-msg">Alphanumeric &amp; numbers supported (Code 128)</p>
+      </div>
+
+      <!-- Primary Action Button (Google Blue Pill) -->
+      <button id="btnPrimaryGenerate" class="btn-google-primary" onclick="triggerManualGenerate()">
+        <span id="primaryGenerateText">Generate QR Code</span>
+      </button>
+    </section>
+
+    <!-- Hero Live Preview Card -->
+    <section class="hero-preview-section">
+      <div class="hero-preview-card">
+        <div class="preview-badge-row">
+          <span class="preview-live-indicator">
+            <span class="live-dot-pulse"></span>
+            <span id="previewModeBadge">LIVE QR</span>
+          </span>
+          <span class="preview-format-tag">Ultra HD</span>
+        </div>
+
+        <div class="preview-stage-box">
+          <!-- QR Canvas View -->
+          <div id="qrStageWrapper" class="stage-container">
+            <div id="qrDisplayCanvas" class="qr-render-frame"></div>
+          </div>
+
+          <!-- Barcode Canvas View -->
+          <div id="barcodeStageWrapper" class="stage-container" style="display: none;">
+            <svg id="barcodeSvg"></svg>
+            <canvas id="barcodeDisplayCanvas" style="display: none;"></canvas>
           </div>
         </div>
-
-        <div class="download-actions-grid">
-          <button class="btn-download-primary" onclick="openDownloadModal('png')">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-            <span>Download PNG</span>
-          </button>
-
-          <button class="btn-download-secondary" onclick="openDownloadModal('svg')">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-            <span>Download SVG</span>
-          </button>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem;">
-          <button class="btn-secondary-action" onclick="shareQR()" title="Share directly to WhatsApp or Android apps">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-            <span>Share</span>
-          </button>
-
-          <button class="btn-secondary-action" onclick="copyImageToClipboard()">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-            <span>Copy</span>
-          </button>
-
-          <button class="btn-secondary-action" onclick="openDownloadModal('pdf')">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/></svg>
-            <span>PDF Flyer</span>
-          </button>
-        </div>
       </div>
+    </section>
 
-    </div>
+    <!-- Action Buttons Row (Directly below preview) -->
+    <section class="preview-actions-row">
+      <button class="native-action-pill" onclick="openSheet('downloadSheet')">
+        <div class="action-pill-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </div>
+        <span>Download</span>
+      </button>
+
+      <button class="native-action-pill" onclick="shareCurrentAsset()">
+        <div class="action-pill-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+        </div>
+        <span>Share</span>
+      </button>
+
+      <button class="native-action-pill" onclick="openSheet('customiseSheet')">
+        <div class="action-pill-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"></circle><circle cx="17.5" cy="10.5" r=".5"></circle><circle cx="8.5" cy="7.5" r=".5"></circle><circle cx="6.5" cy="12.5" r=".5"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></svg>
+        </div>
+        <span>Customise</span>
+      </button>
+    </section>
+
+    <!-- Quick Features Showcase (Matching Reference Graphic) -->
+    <section class="features-summary-grid">
+      <div class="feature-card-item">
+        <div class="feature-icon-circle" style="background: rgba(26, 115, 232, 0.1); color: #1A73E8;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        </div>
+        <span class="feature-label">Fast &amp; Easy</span>
+      </div>
+      <div class="feature-card-item" onclick="openSheet('customiseSheet')">
+        <div class="feature-icon-circle" style="background: rgba(30, 142, 62, 0.1); color: #1E8E3E;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+        </div>
+        <span class="feature-label">Customise</span>
+      </div>
+      <div class="feature-card-item" onclick="shareCurrentAsset()">
+        <div class="feature-icon-circle" style="background: rgba(234, 67, 53, 0.1); color: #EA4335;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><path d="M8.59 13.51l6.83 3.98M15.41 6.51L8.59 10.49" stroke="currentColor" stroke-width="2.2"></path></svg>
+        </div>
+        <span class="feature-label">Save &amp; Share</span>
+      </div>
+      <div class="feature-card-item" onclick="openSheet('standeesSheet')">
+        <div class="feature-icon-circle" style="background: rgba(251, 188, 4, 0.15); color: #D97706;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        </div>
+        <span class="feature-label">Standees</span>
+      </div>
+    </section>
 
   </main>
 
-  <!-- =========================================================================
-       SEO AUTHORITY CONTENT ENGINE (RANK #1 ARCHITECTURE)
-       Crawlable, Rich, Keyword-Dense, Schema-Aligned Guide for Google & Users
-       ========================================================================= -->
-  <section class="seo-authority-container" id="seoGuide">
-    <div class="seo-inner">
+  <!-- ========================================================================= -->
+  <!-- NATIVE BOTTOM SHEETS (Slide up modal components)                          -->
+  <!-- ========================================================================= -->
 
-      <!-- Section 1: Competitor Comparison -->
-      <div class="seo-header-center">
-        <div class="hero-badge-pill" style="margin-bottom: 0.75rem;">
-          <span class="hero-dot-pulse"></span>
-          <span>ENGINEERED FOR PERMANENCE & TRUST</span>
-        </div>
-        <h2 class="seo-h2">Why Businesses Choose PixelCode QR Over Typical Generators</h2>
-        <p class="seo-lead">
-          Unlike legacy QR websites that deactivate your codes after a 14-day trial or demand monthly subscriptions, PixelCode QR builds <strong>100% permanent, static vector QR codes</strong> directly encoded for life with zero middleman redirection or surprise fees.
-        </p>
+  <!-- 1. CUSTOMISE SHEET -->
+  <div id="customiseSheet" class="bottom-sheet-backdrop" onclick="handleSheetBackdropClick(event, 'customiseSheet')">
+    <div class="bottom-sheet-modal">
+      <div class="sheet-drag-handle"></div>
+      <div class="sheet-header">
+        <h2 class="sheet-title">Customise Code</h2>
+        <button class="sheet-close-btn" onclick="closeSheet('customiseSheet')">✕</button>
       </div>
-
-      <!-- Feature Comparison Table -->
-      <div class="seo-table-wrap">
-        <table class="seo-comparison-table">
-          <thead>
-            <tr>
-              <th class="col-feature">Key Capability</th>
-              <th class="col-pixelcode">
-                <div class="th-brand">
-                  <span>PixelCode QR Studio</span>
-                  <span class="badge-winner">Winner</span>
-                </div>
-              </th>
-              <th class="col-other">Legacy Competitors (qr-code-generator, me-qr)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Lifetime Code Validity</strong></td>
-              <td class="col-pixelcode"><span class="check-icon">✓</span> <strong>100% Free Forever</strong> (Direct static matrix; never expires)</td>
-              <td class="col-other"><span class="cross-icon">✗</span> Expires in 14 days unless you pay $15–$35/month</td>
-            </tr>
-            <tr>
-              <td><strong>Vector SVG & Print PDF</strong></td>
-              <td class="col-pixelcode"><span class="check-icon">✓</span> <strong>Free Unlimited</strong> (Infinite resolution for billboards & standees)</td>
-              <td class="col-other"><span class="cross-icon">✗</span> Locked behind high-tier enterprise paywalls</td>
-            </tr>
-            <tr>
-              <td><strong>Account Registration</strong></td>
-              <td class="col-pixelcode"><span class="check-icon">✓</span> <strong>No Sign-Up or Email</strong> (Instant 1-click generation)</td>
-              <td class="col-other"><span class="cross-icon">✗</span> Mandatory email registration, marketing spam & logins</td>
-            </tr>
-            <tr>
-              <td><strong>Designer Standee Frames</strong></td>
-              <td class="col-pixelcode"><span class="check-icon">✓</span> <strong>10 Pre-Designed Standees</strong> (UPI, Menus, Reviews, Wi-Fi)</td>
-              <td class="col-other"><span class="cross-icon">✗</span> Basic monochrome squares with generic frames</td>
-            </tr>
-            <tr>
-              <td><strong>Custom Brand Logo</strong></td>
-              <td class="col-pixelcode"><span class="check-icon">✓</span> <strong>Auto-Centered High Error Level (H)</strong> with 0 scan issues</td>
-              <td class="col-other"><span class="cross-icon">✗</span> Watermarked on free tiers or causes scan errors</td>
-            </tr>
-            <tr>
-              <td><strong>Scan Privacy & Direct Linking</strong></td>
-              <td class="col-pixelcode"><span class="check-icon">✓</span> <strong>100% Direct Encoding</strong> (Zero proxy tracking; works offline)</td>
-              <td class="col-other"><span class="cross-icon">✗</span> Rerouted through slow ad-tracking redirect URLs</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Section 2: Comprehensive Business Solutions Grid -->
-      <div class="seo-solutions-section">
-        <div class="seo-header-center" style="margin-top: 3.5rem;">
-          <h2 class="seo-h2">Commercial QR Code Formats for High-Performing Brands</h2>
-          <p class="seo-lead">Explore how leading retail stores, restaurants, tech startups, and creators deploy PixelCode QR to drive real conversions.</p>
-        </div>
-
-        <div class="seo-solutions-grid">
-          <article class="seo-card">
-            <div class="seo-card-icon">💳</div>
-            <h3 class="seo-h3">UPI & Counter Payment Standees</h3>
-            <p>
-              Generate seamless payment standees for Indian retail counters supporting <strong>Google Pay, PhonePe, Paytm, and BHIM UPI</strong>. Encode your VPA and business name directly to minimize friction at checkout.
-            </p>
-          </article>
-
-          <article class="seo-card">
-            <div class="seo-card-icon">🍽️</div>
-            <h3 class="seo-h3">Contactless Dining & Cafe Menus</h3>
-            <p>
-              Deliver instant PDF or web menus right to guests’ smartphones. Replace expensive printed menus with table tent standees that diners scan in under 0.5 seconds with zero app installations.
-            </p>
-          </article>
-
-          <article class="seo-card">
-            <div class="seo-card-icon">🪪</div>
-            <h3 class="seo-h3">Executive vCard Business Cards</h3>
-            <p>
-              Turn any networking encounter into an instant phone contact. Scanning your vCard QR code automatically prompts the user's iOS Contacts or Android Address Book with your name, phone, email, and company URL.
-            </p>
-          </article>
-
-          <article class="seo-card">
-            <div class="seo-card-icon">📶</div>
-            <h3 class="seo-h3">One-Tap Wi-Fi Auto-Connect</h3>
-            <p>
-              Provide instant guest Wi-Fi access for offices, co-working spaces, and cafes. Eliminates manual password typing and network security errors by standardizing WPA/WPA2 Wi-Fi authentication.
-            </p>
-          </article>
-
-          <article class="seo-card">
-            <div class="seo-card-icon">⭐</div>
-            <h3 class="seo-h3">Google Review & Social Triggers</h3>
-            <p>
-              Place review standees at checkout to boost your local Google Maps 5-star ratings. Direct WhatsApp triggers connect customers immediately to your support team with pre-filled inquiries.
-            </p>
-          </article>
-
-          <article class="seo-card">
-            <div class="seo-card-icon">📐</div>
-            <h3 class="seo-h3">Ultra-HD Vector Print Export (SVG & PDF)</h3>
-            <p>
-              Enjoy infinite-resolution vector scalability for large format billboards, packaging, stickers, acrylic desk standees, and vinyl wraps. Built with 300+ DPI commercial print compliance.
-            </p>
-          </article>
-        </div>
-      </div>
-
-      <!-- Section 3: Step-by-Step Tutorial -->
-      <div class="seo-howto-section">
-        <div class="seo-header-center" style="margin-top: 3.5rem;">
-          <h2 class="seo-h2">How to Generate a Custom QR Code in 4 Easy Steps</h2>
-          <p class="seo-lead">Create professional, scan-guaranteed codes ready for print and digital distribution in under 30 seconds.</p>
-        </div>
-
-        <div class="seo-steps-grid">
-          <div class="seo-step-box">
-            <div class="step-badge">01</div>
-            <h4>Enter Your Destination</h4>
-            <p>Select your content type (Website URL, UPI Pay, Wi-Fi, WhatsApp, or vCard) and fill in your details.</p>
-          </div>
-          <div class="seo-step-box">
-            <div class="step-badge">02</div>
-            <h4>Pick Standee or Barebone</h4>
-            <p>Choose from 10 designer frames such as Classic "Scan Me", UPI Standee, or raw barebone vector.</p>
-          </div>
-          <div class="seo-step-box">
-            <div class="step-badge">03</div>
-            <h4>Brand Palette & Logo</h4>
-            <p>Match your brand colors or curated palettes. Upload your PNG or SVG logo to give your code instant credibility.</p>
-          </div>
-          <div class="seo-step-box">
-            <div class="step-badge">04</div>
-            <h4>Export SVG, PNG, or PDF</h4>
-            <p>Download your ultra high-definition 2048px PNG for web or pure vector SVG/PDF for physical printing.</p>
+      <div class="sheet-body">
+        
+        <!-- Palette Presets -->
+        <div class="custom-control-section">
+          <label class="custom-label">Color Palette</label>
+          <div class="color-presets-row">
+            <button class="color-preset-dot active" style="background: #09090B;" onclick="setCustomColor('#09090B')"></button>
+            <button class="color-preset-dot" style="background: #1A73E8;" onclick="setCustomColor('#1A73E8')"></button>
+            <button class="color-preset-dot" style="background: #1E8E3E;" onclick="setCustomColor('#1E8E3E')"></button>
+            <button class="color-preset-dot" style="background: #EA4335;" onclick="setCustomColor('#EA4335')"></button>
+            <button class="color-preset-dot" style="background: #7C3AED;" onclick="setCustomColor('#7C3AED')"></button>
+            <button class="color-preset-dot" style="background: #0284C7;" onclick="setCustomColor('#0284C7')"></button>
+            <label class="color-custom-picker" title="Pick Custom Color">
+              <input type="color" id="nativeColorPicker" value="#09090B" onchange="setCustomColor(this.value)" />
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8M8 12h8"></path></svg>
+            </label>
           </div>
         </div>
-      </div>
 
-      <!-- Section 4: Interactive Semantic FAQ Accordion -->
-      <div class="seo-faq-section">
-        <div class="seo-header-center" style="margin-top: 3.5rem; margin-bottom: 2rem;">
-          <h2 class="seo-h2">Frequently Asked Questions</h2>
-          <p class="seo-lead">Everything you need to know about generating, printing, and deploying commercial QR codes.</p>
+        <!-- QR Specific: Logo Upload -->
+        <div id="customLogoSection" class="custom-control-section">
+          <label class="custom-label">Brand Logo / Center Icon</label>
+          <div class="logo-upload-box">
+            <input type="file" id="logoFileInput" accept="image/*" style="display: none;" onchange="handleLogoUpload(event)" />
+            <button class="btn-sheet-secondary" onclick="document.getElementById('logoFileInput').click()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+              <span>Upload Custom Logo</span>
+            </button>
+            <button id="btnRemoveLogo" class="btn-sheet-secondary btn-danger" style="display: none;" onclick="removeLogo()">
+              <span>Remove Logo</span>
+            </button>
+          </div>
+          <p class="sheet-tip">Automatically enables Level H (30% error correction) for seamless scanning.</p>
         </div>
 
-        <div class="faq-accordion-list">
-          <details class="faq-item" open>
-            <summary class="faq-question">
-              <span>Are QR codes generated on PixelCode really 100% free and permanent?</span>
-              <span class="faq-toggle-icon">▼</span>
-            </summary>
-            <div class="faq-answer">
-              <p>Yes, absolutely! All static QR codes generated by PixelCode QR are 100% free forever and never expire. Unlike competitor platforms that shut off your codes after 14 days to force a paid subscription, our engine encodes your destination link directly into the QR matrix. There are no middleman servers, no redirects, and no expiration dates—your codes work permanently for life.</p>
-            </div>
-          </details>
+        <!-- Barcode Specific: Display Options -->
+        <div id="customBarcodeSection" class="custom-control-section" style="display: none;">
+          <label class="custom-label">Barcode Height</label>
+          <input type="range" id="barcodeHeightSlider" min="40" max="150" value="80" class="native-range" oninput="updateBarcodeSettings()" />
+          <div class="range-value-label">
+            <span>Compact</span>
+            <span>Tall</span>
+          </div>
 
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>Can I add my company logo and brand colors to the QR code?</span>
-              <span class="faq-toggle-icon">▼</span>
-            </summary>
-            <div class="faq-answer">
-              <p>Yes! You can upload any PNG, JPG, or SVG company logo. Our engine automatically centers the logo and activates high Error Correction Level H (30% error tolerance), ensuring that your code remains 100% instantly scannable by all modern smartphone cameras without data loss.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>Can I download vector SVG and print-ready PDF files for physical printing?</span>
-              <span class="faq-toggle-icon">▼</span>
-            </summary>
-            <div class="faq-answer">
-              <p>Yes. PixelCode QR gives you direct, one-click access to infinite-resolution Vector SVG and commercial print-ready PDF files with embedded typography and standee graphics. These vector files never pixelate or blur, making them ideal for acrylic desk standees, counter tents, banners, and billboards.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>How do I generate a UPI payment QR code standee for Google Pay and PhonePe?</span>
-              <span class="faq-toggle-icon">▼</span>
-            </summary>
-            <div class="faq-answer">
-              <p>Simply click the "UPI Pay" tab in Step 1, enter your Virtual Payment Address (e.g. yourname@okaxis or business@upi) along with your business name, and select the "UPI / Pay Standee" template. Your code is instantly formatted with official UPI payment cues supporting GPay, PhonePe, Paytm, and BHIM.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>Do I need to sign up or provide an email to download my QR code?</span>
-              <span class="faq-toggle-icon">▼</span>
-            </summary>
-            <div class="faq-answer">
-              <p>No registration, credit card, or email address is ever required. PixelCode QR operates directly in your browser with complete client-side processing, respecting your time and data privacy.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>What is the minimum recommended print size for commercial QR codes?</span>
-              <span class="faq-toggle-icon">▼</span>
-            </summary>
-            <div class="faq-answer">
-              <p>For standard business cards, menus, and table standees, a minimum size of 2 × 2 cm (0.8 × 0.8 inches) is recommended. For larger standees and counter cards, 5 × 5 cm (2 × 2 inches) provides effortless scanning from up to 1.5 meters away. Always preserve the quiet zone (white padding around the code) for reliable recognition.</p>
-            </div>
-          </details>
+          <label class="custom-label" style="margin-top: 1rem;">Human Readable Numbers</label>
+          <div class="toggle-row">
+            <span>Show text digits below barcode</span>
+            <input type="checkbox" id="barcodeShowText" checked onchange="updateBarcodeSettings()" class="native-switch" />
+          </div>
         </div>
-      </div>
 
-    </div>
-  </section>
-
-  <!-- DOWNLOAD PROMOTION MODAL -->
-  <div id="downloadModal" class="download-modal-backdrop" onclick="handleModalBackdropClick(event)">
-    <div class="download-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-
-      <!-- Modal Top Bar -->
-      <div class="modal-top-bar">
-        <div class="modal-title-group">
-          <div class="modal-ready-icon">✓</div>
-          <div class="modal-title" id="modalTitle">Your QR Code is Ready!</div>
-        </div>
-        <button class="modal-close-btn" onclick="closeDownloadModal()" aria-label="Close dialog">✕</button>
-      </div>
-
-      <!-- Prominent Download Trigger Box -->
-      <div class="modal-download-box">
-        <button id="modalDownloadBtn" class="btn-modal-trigger-download" onclick="triggerActualDownload()">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-          <span id="modalDownloadBtnText">Download PNG (2048px Ultra HD)</span>
+        <button class="btn-google-primary" onclick="closeSheet('customiseSheet'); showToast('Styles Applied!');">
+          <span>Done</span>
         </button>
-
-        <div class="modal-download-specs">
-          <span>✨ Vector Sharpness</span>
-          <span>•</span>
-          <span id="modalFileSpecs">PNG • 2048 × 2048px</span>
-          <span>•</span>
-          <span>Commercial License</span>
-        </div>
       </div>
-
-      <!-- Underneath: PixelCode Agency Services Promotion -->
-      <div class="agency-promo-card">
-        <div class="promo-badge-pill">
-          <span>✦</span> Need Websites or Mobile Apps?
-        </div>
-
-        <h3 class="promo-headline">
-          We build <span class="accent-glow">websites & mobile apps</span> that make businesses look expensive.
-        </h3>
-
-        <p class="promo-copy">
-          PixelCode creates high-converting websites, iOS/Android mobile applications, and custom software designed to get your business more inquiries, customers, and trust.
-        </p>
-
-        <div class="promo-services-list">
-          <span class="promo-tag">🌐 High-Converting Websites</span>
-          <span class="promo-tag">📱 iOS & Android Mobile Apps</span>
-          <span class="promo-tag">⚡ Custom Web Platforms & SaaS</span>
-          <span class="promo-tag">🎨 Brand Systems & UI/UX</span>
-          <span class="promo-tag">🛒 E-Commerce & Payments</span>
-        </div>
-
-        <div class="promo-action-row">
-          <a href="https://wa.me/919959607605?text=Hi%20PixelCode%2C%20I%20used%20your%20QR%20generator%20and%20I%20want%20to%20discuss%20a%20website%20or%20app%20for%20my%20business!" target="_blank" class="btn-promo-whatsapp">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.455h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            <span>Chat on WhatsApp</span>
-          </a>
-          <a href="https://pixelcode.in" target="_blank" class="btn-promo-site">
-            <span>PixelCode.in ↗</span>
-          </a>
-        </div>
-      </div>
-
     </div>
   </div>
 
-  <!-- Security & Privacy Policy Modal (Google Play Compliance) -->
-  <div id="privacyModal" class="modal-backdrop" onclick="handlePrivacyModalBackdropClick(event)">
-    <div class="modal-card privacy-modal-card">
-      <div class="modal-header">
-        <div class="modal-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <span>PRIVACY &amp; DATA SAFETY</span>
-        </div>
-        <button class="modal-close-btn" onclick="closePrivacyModal()" aria-label="Close modal">✕</button>
+  <!-- 2. STANDEES / TEMPLATES SHEET -->
+  <div id="standeesSheet" class="bottom-sheet-backdrop" onclick="handleSheetBackdropClick(event, 'standeesSheet')">
+    <div class="bottom-sheet-modal">
+      <div class="sheet-drag-handle"></div>
+      <div class="sheet-header">
+        <h2 class="sheet-title">Designer Standees</h2>
+        <button class="sheet-close-btn" onclick="closeSheet('standeesSheet')">✕</button>
       </div>
+      <div class="sheet-body">
+        <p class="sheet-tip">Pre-formatted marketing frames for payment counters, table menus, and print flyers.</p>
+        <div class="standees-grid-picker">
+          <div class="standee-card active" data-standee="none" onclick="selectStandee('none')">
+            <div class="standee-swatch">⬜</div>
+            <span>Barebone Matrix</span>
+          </div>
+          <div class="standee-card" data-standee="upi-counter" onclick="selectStandee('upi-counter')">
+            <div class="standee-swatch">💳</div>
+            <span>UPI Standee</span>
+          </div>
+          <div class="standee-card" data-standee="menu-dining" onclick="selectStandee('menu-dining')">
+            <div class="standee-swatch">🍽️</div>
+            <span>Dining Menu</span>
+          </div>
+          <div class="standee-card" data-standee="wa-chat" onclick="selectStandee('wa-chat')">
+            <div class="standee-swatch">💬</div>
+            <span>WhatsApp Card</span>
+          </div>
+          <div class="standee-card" data-standee="google-review" onclick="selectStandee('google-review')">
+            <div class="standee-swatch">⭐</div>
+            <span>Google Review</span>
+          </div>
+          <div class="standee-card" data-standee="wifi-connect" onclick="selectStandee('wifi-connect')">
+            <div class="standee-swatch">📶</div>
+            <span>Wi-Fi Stand</span>
+          </div>
+          <div class="standee-card" data-standee="vcard-pro" onclick="selectStandee('vcard-pro')">
+            <div class="standee-swatch">📇</div>
+            <span>Acrylic Card</span>
+          </div>
+          <div class="standee-card" data-standee="gradient-frame" onclick="selectStandee('gradient-frame')">
+            <div class="standee-swatch">✨</div>
+            <span>Luxe Frame</span>
+          </div>
+        </div>
+        <button class="btn-google-primary" onclick="closeSheet('standeesSheet')">
+          <span>Apply Standee</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
-      <div class="privacy-modal-body">
-        <div class="privacy-header-content">
+  <!-- 3. DOWNLOAD SHEET -->
+  <div id="downloadSheet" class="bottom-sheet-backdrop" onclick="handleSheetBackdropClick(event, 'downloadSheet')">
+    <div class="bottom-sheet-modal">
+      <div class="sheet-drag-handle"></div>
+      <div class="sheet-header">
+        <h2 class="sheet-title">Export &amp; Download</h2>
+        <button class="sheet-close-btn" onclick="closeSheet('downloadSheet')">✕</button>
+      </div>
+      <div class="sheet-body">
+        <div class="export-options-list">
+          <button class="export-row-card" onclick="executeDownload('png')">
+            <div class="export-icon-box" style="background: rgba(26, 115, 232, 0.1); color: #1A73E8;">PNG</div>
+            <div class="export-info">
+              <span class="export-name">Ultra HD PNG Image</span>
+              <span class="export-meta">2048 × 2048px &bull; Crisp &bull; Print Ready</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </button>
+
+          <button class="export-row-card" onclick="executeDownload('svg')">
+            <div class="export-icon-box" style="background: rgba(30, 142, 62, 0.1); color: #1E8E3E;">SVG</div>
+            <div class="export-info">
+              <span class="export-name">Scalable Vector Graphic</span>
+              <span class="export-meta">Infinitely sharp for Figma, Corel &amp; Acrylic cutting</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </button>
+
+          <button class="export-row-card" onclick="executeDownload('pdf')">
+            <div class="export-icon-box" style="background: rgba(234, 67, 53, 0.1); color: #EA4335;">PDF</div>
+            <div class="export-info">
+              <span class="export-name">Printable Flyer PDF</span>
+              <span class="export-meta">A4 Counter sheet with clear scan instructions</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. SETTINGS & PRIVACY SHEET -->
+  <div id="settingsSheet" class="bottom-sheet-backdrop" onclick="handleSheetBackdropClick(event, 'settingsSheet')">
+    <div class="bottom-sheet-modal">
+      <div class="sheet-drag-handle"></div>
+      <div class="sheet-header">
+        <h2 class="sheet-title">App Info &amp; Privacy</h2>
+        <button class="sheet-close-btn" onclick="closeSheet('settingsSheet')">✕</button>
+      </div>
+      <div class="sheet-body">
+        <div class="settings-privacy-banner">
           <div class="privacy-shield-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
           </div>
           <div>
-            <h2 class="privacy-title">100% On-Device &amp; Private</h2>
-            <p class="privacy-subtitle">PixelCode QR operates strictly client-side. Your data never leaves your device.</p>
+            <h3 class="banner-title">100% On-Device &amp; Private</h3>
+            <p class="banner-desc">Zero tracking, zero databases, and zero servers. All QR and barcode generation happens strictly in your device memory.</p>
           </div>
         </div>
 
-        <div class="privacy-grid">
-          <div class="privacy-card">
-            <div class="privacy-card-title">
-              <span class="privacy-check">✓</span> Zero Data Collection
+        <div class="settings-nav-list">
+          <a href="privacy.html" class="settings-nav-item" target="_blank" rel="noopener noreferrer">
+            <div class="settings-item-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>Read Full Privacy Policy</span>
             </div>
-            <p class="privacy-card-desc">No accounts, no user telemetry, no tracking scripts, and no server databases. Matrix generation runs locally in device memory.</p>
-          </div>
-          <div class="privacy-card">
-            <div class="privacy-card-title">
-              <span class="privacy-check">✓</span> Permanent Direct QR Codes
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><path d="M9 18l6-6-6-6"></path></svg>
+          </a>
+          <a href="https://pixelcode.in/terms" class="settings-nav-item" target="_blank" rel="noopener noreferrer">
+            <div class="settings-item-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <span>Terms of Service</span>
             </div>
-            <p class="privacy-card-desc">Target URLs, UPI IDs, Wi-Fi credentials, and vCards are embedded directly. Zero middleman redirect servers, zero link expiration.</p>
-          </div>
-          <div class="privacy-card">
-            <div class="privacy-card-title">
-              <span class="privacy-check">✓</span> Zero Dangerous Permissions
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><path d="M9 18l6-6-6-6"></path></svg>
+          </a>
+          <a href="https://pixelcode.in" class="settings-nav-item" target="_blank" rel="noopener noreferrer">
+            <div class="settings-item-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span>PixelCode Agency &bull; Websites &amp; Apps</span>
             </div>
-            <p class="privacy-card-desc">No camera, no contacts, no GPS location, and no storage permissions required. Uses secure Android FileProvider.</p>
-          </div>
-          <div class="privacy-card">
-            <div class="privacy-card-title">
-              <span class="privacy-check">✓</span> Strict Network Security
-            </div>
-            <p class="privacy-card-desc">Cleartext HTTP traffic is completely disabled. Meets Google Play Store App Defense Alliance security standards.</p>
-          </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><path d="M9 18l6-6-6-6"></path></svg>
+          </a>
         </div>
 
-        <div class="privacy-legal-section">
-          <div class="privacy-app-meta">
-            <div><strong>Application:</strong> PixelCode QR Vector Studio</div>
-            <div><strong>Version:</strong> 1.0.0 (Build 1) • Android 15 Ready (API 35)</div>
-            <div><strong>Developer:</strong> PixelCode (https://pixelcode.in)</div>
-            <div><strong>Support &amp; Inquiries:</strong> info@pixelcode.in</div>
-          </div>
-
-          <div class="privacy-links-row">
-            <a href="privacy.html" target="_blank" rel="noopener noreferrer" class="btn-privacy-action">
-              <span>Read Full Privacy Policy ↗</span>
-            </a>
-            <a href="https://pixelcode.in/terms" target="_blank" rel="noopener noreferrer" class="btn-privacy-action secondary" onclick="openExternalUrl(event, 'https://pixelcode.in/terms')">
-              <span>Terms of Service ↗</span>
-            </a>
-          </div>
+        <div class="settings-meta-footer">
+          <div><strong>Application:</strong> PixelCode QR &amp; Barcode Studio</div>
+          <div><strong>Package ID:</strong> com.pixelcode.qr</div>
+          <div><strong>Version:</strong> 1.0.1 (Build 2) &bull; Target SDK 36 (Android 16)</div>
+          <div><strong>Developer:</strong> PixelCode (info@pixelcode.in)</div>
         </div>
       </div>
     </div>
@@ -996,61 +539,33 @@ WhatsApp: +919959607605</textarea>
   <!-- Toast Notification -->
   <div id="toast" class="toast-msg" style="display: none;"></div>
 
-  <!-- Floating Live QR Preview (Mobile Only - Touch & Mouse Draggable) -->
-  <div id="mobileFloatingPreview" class="mobile-floating-pip" onclick="scrollToPreview()">
-    <div class="pip-header">
-      <span class="pip-drag-handle" title="Drag to reposition">
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="8" cy="6" r="2.2"/><circle cx="16" cy="6" r="2.2"/><circle cx="8" cy="12" r="2.2"/><circle cx="16" cy="12" r="2.2"/><circle cx="8" cy="18" r="2.2"/><circle cx="16" cy="18" r="2.2"/></svg>
-      </span>
-      <div class="pip-live-badge">
-        <span class="pip-dot"></span>
-        <span>LIVE QR</span>
+  <!-- Fixed Native Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav">
+    <button id="navBtnQr" class="bottom-nav-item active" onclick="switchMainMode('qr')">
+      <div class="nav-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg>
       </div>
-      <button class="pip-expand-btn" onclick="scrollToPreview(); event.stopPropagation();" title="Scroll to Full Preview">↑ Full</button>
-    </div>
-    <div class="pip-canvas-wrap">
-      <canvas id="mobileFloatingCanvas"></canvas>
-    </div>
-    <button class="pip-quick-download" onclick="openDownloadModal('png'); event.stopPropagation();">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-      <span>Download</span>
+      <span>QR Code</span>
     </button>
-  </div>
-
-  <!-- Floating Brand Action Widget (Exact replica from pixelcode.in) -->
-  <div class="pixelcode-floating-widget">
-    <a href="https://wa.me/919959607605?text=Hi%20PixelCode%2C%20I%20am%20using%20your%20QR%20generator" target="_blank" rel="noopener noreferrer" class="float-wa-icon" aria-label="WhatsApp PixelCode" title="Chat on WhatsApp" onclick="openExternalUrl(event, 'https://wa.me/919959607605?text=Hi%20PixelCode%2C%20I%20am%20using%20your%20QR%20generator')">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.455h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
-    <span class="float-divider"></span>
-    <a href="https://pixelcode.in" target="_blank" rel="noopener noreferrer" class="float-agency-link" onclick="openExternalUrl(event, 'https://pixelcode.in')">
-      PixelCode Agency ↗
-    </a>
-  </div>
-
-  <!-- Footer with Compliance & Privacy Links -->
-  <footer class="app-footer">
-    <div class="footer-inner">
-      <div class="footer-brand-line">
-        <strong>PixelCode QR</strong> — High Resolution Commercial Vector Engine (v1.0.1).
+    <button id="navBtnBarcode" class="bottom-nav-item" onclick="switchMainMode('barcode')">
+      <div class="nav-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="5" x2="3" y2="19"></line><line x1="7" y1="5" x2="7" y2="19"></line><line x1="11" y1="5" x2="11" y2="19"></line><line x1="14" y1="5" x2="14" y2="19"></line><line x1="18" y1="5" x2="18" y2="19"></line><line x1="21" y1="5" x2="21" y2="19"></line></svg>
       </div>
-      <div class="footer-compliance-row">
-        <a href="privacy.html" class="footer-link-btn">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <span>Privacy Policy</span>
-        </a>
-        <span class="footer-dot">•</span>
-        <button class="footer-link-btn" onclick="openPrivacyModal()">Data Safety &amp; Security</button>
-        <span class="footer-dot">•</span>
-        <a href="https://pixelcode.in/terms" target="_blank" rel="noopener noreferrer" class="footer-link-btn" onclick="openExternalUrl(event, 'https://pixelcode.in/terms')">Terms of Service</a>
-        <span class="footer-dot">•</span>
-        <a href="https://pixelcode.in" target="_blank" rel="noopener noreferrer" class="footer-link-btn" onclick="openExternalUrl(event, 'https://pixelcode.in')">PixelCode.in ↗</a>
+      <span>Barcode</span>
+    </button>
+    <button id="navBtnStandees" class="bottom-nav-item" onclick="openSheet('standeesSheet')">
+      <div class="nav-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line><path d="M16 10h.01"></path></svg>
       </div>
-      <div class="footer-subtext">
-        100% Client-Side Processing • Zero User Tracking • Built with 🖤 by <a href="https://pixelcode.in" target="_blank" rel="noopener noreferrer" onclick="openExternalUrl(event, 'https://pixelcode.in')">PixelCode</a>
+      <span>Standees</span>
+    </button>
+    <button id="navBtnSettings" class="bottom-nav-item" onclick="openSheet('settingsSheet')">
+      <div class="nav-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
       </div>
-    </div>
-  </footer>
+      <span>Settings</span>
+    </button>
+  </nav>
 
   <script src="app.js"></script>
 </body>
