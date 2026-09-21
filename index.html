@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   
   <!-- Primary SEO Meta Tags (Rank #1 Optimization) -->
   <title>Free QR Code Generator with Logo & Vector SVG, PDF | PixelCode QR Studio</title>
@@ -215,7 +215,11 @@
       </div>
 
       <div class="header-right">
-        <a href="https://pixelcode.in" target="_blank" class="btn-pixelcode-link">
+        <button id="privacyInfoBtn" class="btn-privacy-link" onclick="openPrivacyModal()" title="Privacy Policy & Security Info" aria-label="Privacy & Security">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Privacy & Security</span>
+        </button>
+        <a href="https://pixelcode.in" target="_blank" rel="noopener noreferrer" class="btn-pixelcode-link" onclick="openExternalUrl(event, 'https://pixelcode.in')">
           <span>PixelCode.in</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
         </a>
@@ -601,15 +605,20 @@ WhatsApp: +919959607605</textarea>
           </button>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem;">
+          <button class="btn-secondary-action" onclick="shareQR()" title="Share directly to WhatsApp or Android apps">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            <span>Share</span>
+          </button>
+
           <button class="btn-secondary-action" onclick="copyImageToClipboard()">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-            <span>Copy Image</span>
+            <span>Copy</span>
           </button>
 
           <button class="btn-secondary-action" onclick="openDownloadModal('pdf')">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/></svg>
-            <span>Printable PDF</span>
+            <span>PDF Flyer</span>
           </button>
         </div>
       </div>
@@ -914,6 +923,76 @@ WhatsApp: +919959607605</textarea>
     </div>
   </div>
 
+  <!-- Security & Privacy Policy Modal (Google Play Compliance) -->
+  <div id="privacyModal" class="modal-backdrop" onclick="handlePrivacyModalBackdropClick(event)">
+    <div class="modal-card privacy-modal-card">
+      <div class="modal-header">
+        <div class="modal-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>PRIVACY &amp; DATA SAFETY</span>
+        </div>
+        <button class="modal-close-btn" onclick="closePrivacyModal()" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="privacy-modal-body">
+        <div class="privacy-header-content">
+          <div class="privacy-shield-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <div>
+            <h2 class="privacy-title">100% On-Device &amp; Private</h2>
+            <p class="privacy-subtitle">PixelCode QR operates strictly client-side. Your data never leaves your device.</p>
+          </div>
+        </div>
+
+        <div class="privacy-grid">
+          <div class="privacy-card">
+            <div class="privacy-card-title">
+              <span class="privacy-check">✓</span> Zero Data Collection
+            </div>
+            <p class="privacy-card-desc">No accounts, no user telemetry, no tracking scripts, and no server databases. Matrix generation runs locally in device memory.</p>
+          </div>
+          <div class="privacy-card">
+            <div class="privacy-card-title">
+              <span class="privacy-check">✓</span> Permanent Direct QR Codes
+            </div>
+            <p class="privacy-card-desc">Target URLs, UPI IDs, Wi-Fi credentials, and vCards are embedded directly. Zero middleman redirect servers, zero link expiration.</p>
+          </div>
+          <div class="privacy-card">
+            <div class="privacy-card-title">
+              <span class="privacy-check">✓</span> Zero Dangerous Permissions
+            </div>
+            <p class="privacy-card-desc">No camera, no contacts, no GPS location, and no storage permissions required. Uses secure Android FileProvider.</p>
+          </div>
+          <div class="privacy-card">
+            <div class="privacy-card-title">
+              <span class="privacy-check">✓</span> Strict Network Security
+            </div>
+            <p class="privacy-card-desc">Cleartext HTTP traffic is completely disabled. Meets Google Play Store App Defense Alliance security standards.</p>
+          </div>
+        </div>
+
+        <div class="privacy-legal-section">
+          <div class="privacy-app-meta">
+            <div><strong>Application:</strong> PixelCode QR Vector Studio</div>
+            <div><strong>Version:</strong> 1.0.0 (Build 1) • Android 15 Ready (API 35)</div>
+            <div><strong>Developer:</strong> PixelCode (https://pixelcode.in)</div>
+            <div><strong>Support &amp; Inquiries:</strong> info@pixelcode.in</div>
+          </div>
+
+          <div class="privacy-links-row">
+            <a href="https://pixelcode.in/privacy" target="_blank" rel="noopener noreferrer" class="btn-privacy-action" onclick="openExternalUrl(event, 'https://pixelcode.in/privacy')">
+              <span>Read Online Privacy Policy ↗</span>
+            </a>
+            <a href="https://pixelcode.in/terms" target="_blank" rel="noopener noreferrer" class="btn-privacy-action secondary" onclick="openExternalUrl(event, 'https://pixelcode.in/terms')">
+              <span>Terms of Service ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification -->
   <div id="toast" class="toast-msg" style="display: none;"></div>
 
@@ -940,23 +1019,33 @@ WhatsApp: +919959607605</textarea>
 
   <!-- Floating Brand Action Widget (Exact replica from pixelcode.in) -->
   <div class="pixelcode-floating-widget">
-    <a href="https://wa.me/919959607605?text=Hi%20PixelCode%2C%20I%20am%20using%20your%20QR%20generator" target="_blank" class="float-wa-icon" aria-label="WhatsApp PixelCode" title="Chat on WhatsApp">
+    <a href="https://wa.me/919959607605?text=Hi%20PixelCode%2C%20I%20am%20using%20your%20QR%20generator" target="_blank" rel="noopener noreferrer" class="float-wa-icon" aria-label="WhatsApp PixelCode" title="Chat on WhatsApp" onclick="openExternalUrl(event, 'https://wa.me/919959607605?text=Hi%20PixelCode%2C%20I%20am%20using%20your%20QR%20generator')">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.455h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
     <span class="float-divider"></span>
-    <a href="https://pixelcode.in" target="_blank" class="float-agency-link">
+    <a href="https://pixelcode.in" target="_blank" rel="noopener noreferrer" class="float-agency-link" onclick="openExternalUrl(event, 'https://pixelcode.in')">
       PixelCode Agency ↗
     </a>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer with Compliance & Privacy Links -->
   <footer class="app-footer">
     <div class="footer-inner">
-      <div>
-        <strong>PixelCode QR</strong> — High Resolution Commercial Vector Engine.
+      <div class="footer-brand-line">
+        <strong>PixelCode QR</strong> — High Resolution Commercial Vector Engine (v1.0.0).
       </div>
-      <div>
-        Built by <a href="https://pixelcode.in" target="_blank">PixelCode.in</a> • Websites, Branding & Creative That Make People Take Action.
+      <div class="footer-compliance-row">
+        <button class="footer-link-btn" onclick="openPrivacyModal()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Privacy &amp; Data Safety</span>
+        </button>
+        <span class="footer-dot">•</span>
+        <a href="https://pixelcode.in/terms" target="_blank" rel="noopener noreferrer" class="footer-link-btn" onclick="openExternalUrl(event, 'https://pixelcode.in/terms')">Terms of Service</a>
+        <span class="footer-dot">•</span>
+        <a href="https://pixelcode.in" target="_blank" rel="noopener noreferrer" class="footer-link-btn" onclick="openExternalUrl(event, 'https://pixelcode.in')">PixelCode.in ↗</a>
+      </div>
+      <div class="footer-subtext">
+        100% Client-Side Processing • Zero User Tracking • Built with 🖤 by <a href="https://pixelcode.in" target="_blank" rel="noopener noreferrer" onclick="openExternalUrl(event, 'https://pixelcode.in')">PixelCode</a>
       </div>
     </div>
   </footer>

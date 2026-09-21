@@ -1086,6 +1086,98 @@ async function copyImageToClipboard() {
   }
 }
 
+// Native Android Web Share Integration
+async function shareQR() {
+  if (!currentQRImage) return;
+
+  const exportCanvas = document.createElement('canvas');
+  paintTemplate(exportCanvas, currentQRImage, 1200);
+
+  try {
+    exportCanvas.toBlob(async blob => {
+      if (!blob) return;
+      const file = new File([blob], 'pixelcode-qr.png', { type: 'image/png' });
+
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({
+          title: 'PixelCode QR',
+          text: 'Generated with PixelCode QR (https://pixelcode.in)',
+          files: [file]
+        });
+      } else if (navigator.share) {
+        await navigator.share({
+          title: 'PixelCode QR',
+          text: `Scan my QR Code: ${getPayload()}`,
+          url: state.contentType === 'url' ? getPayload() : 'https://pixelcode.in'
+        });
+      } else {
+        openDownloadModal('png');
+      }
+    }, 'image/png');
+  } catch (err) {
+    if (err.name !== 'AbortError') {
+      openDownloadModal('png');
+    }
+  }
+}
+
+// Android Back Button Listener & Modal Dismissal (Capacitor / Cordova / Hardware Back)
+document.addEventListener('backbutton', (e) => {
+  const privacyModal = document.getElementById('privacyModal');
+  if (privacyModal && privacyModal.classList.contains('active')) {
+    e.preventDefault();
+    closePrivacyModal();
+    return;
+  }
+  const downloadModal = document.getElementById('downloadModal');
+  if (downloadModal && downloadModal.classList.contains('active')) {
+    e.preventDefault();
+    closeDownloadModal();
+    return;
+  }
+});
+
+// Safe External Link Launcher for Android (Opens system browser instead of WebView)
+function openExternalUrl(event, url) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  try {
+    if (window.Capacitor && window.Capacitor.isNativePlatform()) {
+      window.open(url, '_system');
+      return false;
+    }
+  } catch (_) {}
+  window.open(url, '_blank', 'noopener,noreferrer');
+  return false;
+}
+
+// ============================================================================
+// PRIVACY & SECURITY MODAL (Play Store Compliance)
+// ============================================================================
+
+function openPrivacyModal() {
+  const modal = document.getElementById('privacyModal');
+  if (!modal) return;
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePrivacyModal() {
+  const modal = document.getElementById('privacyModal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+function handlePrivacyModalBackdropClick(event) {
+  if (event.target && event.target.id === 'privacyModal') {
+    closePrivacyModal();
+  }
+}
+
 // ============================================================================
 // PROMOTIONAL DOWNLOAD MODAL (Websites, Apps & Agency Services)
 // ============================================================================
@@ -1136,6 +1228,7 @@ function handleModalBackdropClick(event) {
 
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
+    closePrivacyModal();
     closeDownloadModal();
   }
 });
